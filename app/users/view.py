@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from flask import Blueprint, flash, g, Markup, redirect, render_template, request, session, url_for
 from flask.ext.login import login_required, login_user, logout_user
