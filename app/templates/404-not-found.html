@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+{% block title %}Not found | Inkscape{% endblock %}
+{{ url_for('static', filename='images/linked-image-not-found.png') }}
+{% block content %}
+<h1>Page not found</h1>
+<p>Couldn't find what you were looking for. Sorry about that. In the future we might have a funny image here for you to look at but at the moment it's just boring.</p>
+<p>If you've followed a link from our site, or are using a link that used to work before we made this shiny new website, please tell us and we'll fix it up.</p>
+<p>If you don't know why you got here, maybe you'd like to <a href="/search">search</a> to see if you can find what you were looking for.</p>
+<p>Then again, there's always the possibility that you came here just to see what the 404 page looked like. I hope you're satisfied.</p>
+{% endblock %}

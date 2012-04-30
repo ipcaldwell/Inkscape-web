@@ -1,0 +1,15 @@
+{% extends "base_about.html" %}
+{% block title %}Gallery: Icons{% endblock %}
+{% block pagetitle %}Icons{% endblock %}
+{% block body-classes %}page-gallery{% endblock %}
+{% block left-column %}
+<p>These are examples of using Inkscape for designing icons.</p>
+
+<div class="category">
+	<a href="{{ MEDIA_URL }}images/gallery/icons_jimmac_yast_smt.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/icons_jimmac_yast_smt_thumb.png" alt=""></a>
+	<h2>A <a href="http://www.gnome.org/">GNOME</a> icon by Jakub "Jimmac" Steiner</h2>
+	<p>Inkscape allows to have multiple views of the same canvas, so that an icon artist can be accurate when editing shapes while getting a precise preview of how the artwork is going to look like at 1:1. Other notable features for icon design is the versatile grid and snapping tools, being able to have gradients on strokes, including RGBA gradient stops.</p>
+
+	<p>This example also illustrates use of <a href="http://blip.tv/pixel-pusher-screencasts/one-canvas-workflow-1081509">one-canvas workflow</a> used by <a href="http://tango.freedesktop.org/Tango_Desktop_Project">Tango</a> artists now.</p>
+</div>
+{% endblock %}

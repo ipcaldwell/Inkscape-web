@@ -1,0 +1,59 @@
+#page-download {
+	#left-column div.section {
+		margin-bottom: 16px;
+		border-radius: 7px;
+		-moz-border-radius: 7px;
+		padding: 15px 15px 15px 54px;
+		background-color: #e6e6e6;
+		background-position: 15px 20px;
+		background-repeat: no-repeat;
+		&#windows { background-image: url(../images/shadow-windows.png); }
+		&#macosx { background-image: url(../images/shadow-macosx.png); }
+		&#linux { background-image: url(../images/shadow-linux.png); }
+		&#source { background-image: url(../images/shadow-source.png); margin-bottom: 30px; }
+		&.first { margin-top: 30px; }
+		&#macosx.first {
+			.button span {
+				color: lighten($button-text-colour, 10%);
+			}
+			.button.current-os-version span {
+				color: darken($button-text-colour, 20%);
+			}
+		}
+		.button small {
+			display: block;
+			text-align: center;
+			font-size: 80%;
+			opacity: 0.6;
+			line-height: 1;
+		}
+		.supplemental {
+			margin-top: 30px;
+		}
+		.current-os-version {
+			border-color: $link-dark;
+			box-shadow: 0 0 2px $link-dark;//, inset 0 0 50px rgba(213, 85, 0, 0.1);
+		}
+		h2 {
+			margin-top: 7px;
+		}
+		> div {
+			float: left;
+			margin-top: -9px;
+			// to compensate for the p
+			width: 380px;
+		}
+		> p {
+			width: 380px;
+		}
+		> ul {
+			list-style: none;
+			float: right;
+			margin: -39px 0 -10px 0;
+			padding: 0;
+			li {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+.sass-cache
+cache
+config.py
+

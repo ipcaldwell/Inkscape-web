@@ -1,0 +1,87 @@
+#page-screenshots #left-column {
+	.screenshot {
+		border: 1px solid #cccccc;
+		background-color: #ffffff;
+		width: 678px;
+		position: relative;
+		display: block;
+	}
+	#screenshots-big {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+		height: 440px;
+	}
+	#screenshots-big .screenshot {
+		position: absolute;
+		top: 0;
+		opacity: 0;
+		transition: opacity 0s ease 0.4s;
+		-moz-transition: opacity 0s ease 0.4s;
+		-webkit-transition: opacity 0s ease 0.4s;
+	}
+	#screenshots-big .screenshot.current {
+		z-index: 1;
+		opacity: 1;
+		transition: opacity 0.4s ease 0s;
+		-moz-transition: opacity 0.4s ease 0s;
+		-webkit-transition: opacity 0.4s ease 0s;
+	}
+	#screenshots-big .screenshot img {
+		width: 640px;
+		height: 400px;
+		margin: 19px;
+		display: block;
+	}
+	#screenshots-big .screenshot p {
+		background-color: #474747;
+		background-color: rgba(64, 64, 64, 0.9);
+		color: #ffffff;
+		position: absolute;
+		bottom: 0;
+		width: 654px;
+		padding: 12px;
+		margin: 0;
+		cursor: default;
+		a {
+			color: $link-light;
+		}
+	}
+	#screenshots-thumbnails {
+		overflow: auto;
+		margin: 20px 0 70px;
+		padding: 0;
+		list-style: none;
+	}
+	#screenshots-thumbnails .screenshot {
+		margin-right: 12px;
+		width: 159px;
+		float: left;
+	}
+	#screenshots-thumbnails .screenshot:hover {
+		border-color: #333333;
+		background-color: #cccccc;
+	}
+	/* Multi-row */
+	#screenshots-thumbnails > :nth-child(n+5) .screenshot {
+		margin-top: 12px;
+	}
+	#screenshots-thumbnails > :nth-child(4n) .screenshot {
+		margin-right: 0;
+	}
+	#screenshots-thumbnails .screenshot img {
+		margin: 4px;
+		width: 151px;
+		height: 100px;
+		display: block;
+	}
+	#screenshots-thumbnails .screenshot.current {
+		border-color: #333333;
+		background-color: #333333;
+	}
+	.screenshot-fullsize {
+		cursor: -moz-zoom-in;
+		cursor: -webkit-zoom-in;
+	}
+}

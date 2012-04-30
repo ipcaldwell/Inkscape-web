@@ -1,0 +1,121 @@
+#page-donate {
+	.box-2 {
+		height: 120px;
+	}
+	#BB_BuyButtonForm {
+		text-align: center;
+	}
+	#BB_BuyButtonForm div {
+		vertical-align: middle;
+		display: inline-block;
+	}
+	#BB_BuyButtonForm div:first-of-type {
+		vertical-align: top;
+		padding-top: 4px;
+	}
+}
+
+#left-column h2.visual-block {
+	background-color: #e6e6e6;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	padding: 15px;
+	line-height: 1;
+}
+#page-faq #left-column {
+	h2 {
+		background-color: #e6e6e6;
+		border-radius: 6px;
+		-moz-border-radius: 6px;
+		padding: 15px 15px 15px 40px;
+		line-height: 1;
+		a.expandall {
+			border-radius: 6px;
+			color: #666666;
+			float: right;
+			font-size: 11px;
+			line-height: 18px;
+			margin: -48px 0 0;
+			padding: 15px;
+		}
+		a.expander {
+			display: block;
+			padding: 15px 15px 15px 40px;
+			color: #000000; // h2 color
+			background: url("../images/expand-section-expanded.png") no-repeat 15px 17px;
+		}
+	}
+	.category {
+		&.collapsed h2, &.expanded h2 {
+			padding: 0;
+		}
+		&.collapsed h2 a.expander {
+			background: url("../images/expand-section-collapsed.png") no-repeat 15px 17px;
+		}
+	}
+	h3 {
+		a.expander {
+			//display: block;
+			margin-left: 3px;
+			padding-left: 34px;
+			background: url("../images/expand-item-expanded.png") no-repeat 12px 5px;
+		}
+		margin-top: 15px; // overridden from 20px
+		margin-left: 37px;
+		text-indent: -37px;
+	}
+	.question {
+		&.collapsed h3 a.expander {
+			background: url("../images/expand-item-collapsed.png") no-repeat 12px 5px;
+		}
+	}
+	.category-body {
+		.question:first-child h3 {
+			margin-top: 0;
+		}
+		margin-bottom: 50px;
+	}
+	.question-body {
+		padding-left: 55px;
+		border-bottom: 1px solid #cccccc;
+	}
+}
+
+.page-gallery #left-column .category {
+	$max-image-width: 300px;
+	$img-padding: 10px;
+	$colspace: 20px;
+	$space: $max-image-width + ($colspace + $img-padding * 2 + 2px /* border */);
+	clear: both;
+	position: relative;
+	display: inline-block;
+	margin-top: 50px;
+	.thumbnail {
+		padding: $img-padding;
+		border: 1px solid #ccc;
+		float: left;
+		margin-right: $colspace;
+	}
+	> :link, :visited {
+		outline: 0;
+		&:hover, &:focus {
+			.thumbnail {
+				border-color: #666;
+			}
+		}
+	}
+	> p, > h2 {
+		float: right;
+		width: 680px - $space;
+	}
+	&.flip {
+		.thumbnail {
+			float: right;
+			margin-right: 0;
+			margin-left: $colspace;
+		}
+		> p, > h2 {
+			float: left;
+		}
+	}
+}

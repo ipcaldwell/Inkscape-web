@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="wrapper">
+    <p id="breadcrumb">
+    {% block breadcrumbs %}{% endblock %}
+    </p>
+
+    <h1>{% block pagetitle %}{% endblock %}</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="messages">
+        {% for category, message in messages %}
+        <ul>
+            <li class="message message-{{ category }}">{{ message }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <div id="left-column">
+        {% block main %}{% endblock %}
+    </div>
+
+    <div id="right-sidebar">
+        {% block sidebar %}{% endblock %}
+    </div>
+    <br class="clearer">
+</div>
+{% endblock %}

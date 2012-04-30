@@ -1,0 +1,906 @@
+$fonts-normal: 'Trebuchet MS', Ubuntu, 'Liberation Sans', FreeSans, sans-serif;
+$fonts-heading: CallunaRegular, Calluna, $fonts-normal;
+
+$num-nav-categories: 6; // Used for the footer
+
+// Colourscheme declaration. Nice and easy to switch the whole colourscheme.
+@import 'colours/grey';
+
+// Fill in the rest of the colours not specified
+$dark:                       lightness($base-colour) < 50%      !default;
+$colours-1:                  $base-colour                       !default;
+$colours-2:                  darken($base-colour, 7.25%)        !default;
+$colours-sep-1:              lighten($colours-1, 5%)            !default;
+$colours-sep-2:              mix($colours-1, $colours-2, 20/26) !default;
+
+$text-colour:                #333333                            !default;
+$coloured-bg-text:           #ffffff                            !default;
+
+$link:                       #d55500                            !default;
+$link-dark:                  $link                              !default;
+$link-light:                 lighten($link, 16%)                !default;
+$donate-link-colour:         $link-light                        !default;
+
+$top-drops:                  $colours-1                         !default;
+
+$footer-top-colour:          darken($colours-2, 15%)            !default;
+
+$menu-gradient-top:          $colours-1                         !default;
+$menu-gradient-bottom:       $colours-2                         !default;
+$menu-gradient-hover-top:    $colours-2                         !default;
+$menu-gradient-hover-bottom: $colours-1                         !default;
+$menu-item-hover:            $colours-2                         !default;
+$menu-border-bottom:         darken($menu-gradient-bottom, 15%) !default;
+$menu-sub-border-top:        darken($menu-gradient-top, 30%)    !default;
+
+$button-text-colour:         $text-colour                       !default;
+$button-colour-top:          #ffffff                            !default;
+$button-colour-bottom:       #b4b4b4                            !default;
+$button-colour-plain:        #eeeeee                            !default;
+$button-colour-top-hover:    #ffffff                            !default;
+$button-colour-bottom-hover: #c6c6c6                            !default;
+$button-colour-plain-hover:  #ffffff                            !default;
+
+/*A font by Jos Buivenga (exljbris) -> www.exljbris.com*/
+@font-face {
+    font-family: 'CallunaRegular';
+    src: url('../fonts/calluna-regular-webfont.eot');
+    src: local('☺'), url('../fonts/calluna-regular-webfont.woff') format('woff'), url('../fonts/calluna-regular-webfont.ttf') format('truetype'), url('../fonts/calluna-regular-webfont.svg#webfontV868CxYz') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 960px;
+    margin: 0 auto;
+    background-color: white;
+    background-image: -moz-linear-gradient(top, #e6e6e6, #e6e6e6 10px, white 75px);
+    background-image: -webkit-gradient(linear, left top, left 75, from(#e6e6e6), color-stop(0.1, #e6e6e6), color-stop(0.75, white), to(white));
+    background-repeat: no-repeat;
+    font-size: 12px;
+    font-family: $fonts-normal;
+    color: $text-colour;
+}
+
+:link, :visited {
+    text-decoration: none;
+    color: $link-dark;
+    &:hover, &:active {
+        text-decoration: underline;
+    }
+}
+
+ul {
+    // Reduces the space before the bullet by 10px
+    padding-left: 30px;
+    &.ticks li, li.tick {
+        list-style: none;
+        background: left center url(../images/bullet-tick.png) no-repeat;
+        margin-left: -22px;
+        padding: 2px 0 2px 22px;
+    }
+}
+
+#content {
+    padding: 20px 20px 50px;
+    background-color: white;
+    background-image: -moz-linear-gradient(top, #eeeeee, white 100px);
+    background-image: -webkit-gradient(linear, left top, left 100, from(#eeeeee), to(white));
+    line-height: 20px;
+    min-height: 500px;
+    .summary {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 40px;
+    }
+    > div.wrapper {
+        margin: -20px;
+        padding: 20px;
+        min-height: 500px;
+    }
+    h1 {
+        font-family: $fonts-heading;
+        font-size: 28px;
+        line-height: 35px;
+        font-weight: normal;
+        margin: 18px 0;
+        //color: $text-colour; // default
+    }
+    h2 {
+        // Places to update if color changes: other, FAQ page
+        color: #000000;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    h3 {
+        color: #000000;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 20px 0 0;
+    }
+}
+
+.readmore {
+    margin-top: -10px;
+    // 0 does nothing, bite into the previous paragraph's surplus margin.
+    text-align: right;
+    font-size: 11px;
+    line-height: 11px;
+}
+
+#breadcrumb {
+    font-size: 11px;
+    margin: 0 -4px 10px -4px;
+    a {
+        margin: 0 4px;
+    }
+}
+
+.messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .success {
+        border: 1px solid #77dd77;
+        -moz-box-shadow: 0 0 5px #77dd77;
+        box-shadow: 0 0 5px #77dd77;
+        background-color: #ccffcc;
+        color: #002200;
+    }
+
+    .info, .debug {
+        border: 1px solid #dddd77;
+        -moz-box-shadow: 0 0 5px #dddd77;
+        box-shadow: 0 0 5px #dddd77;
+        background-color: #ffffcc;
+        color: #220000;
+    }
+
+    .warning {
+        border: 1px solid #ddaa77;
+        -moz-box-shadow: 0 0 5px #ddaa77;
+        box-shadow: 0 0 5px #ddaa77;
+        background-color: #ffe5cc;
+        color: #221100;
+    }
+
+    .error {
+        border: 1px solid #dd7777;
+        -moz-box-shadow: 0 0 5px #dd7777;
+        box-shadow: 0 0 5px #dd7777;
+        background-color: #ffcccc;
+        color: #220000;
+    }
+
+    li {
+        padding: 6px;
+        margin: 8px 0;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}
+
+div.article {
+    h2 {
+        margin-bottom: 0;
+    }
+    .postdate {
+        margin-top: 0;
+        font-size: 11px;
+        color: #666666;
+    }
+}
+
+video {
+    margin-bottom: 30px;
+}
+
+// Header
+
+#topsearch {
+    margin: 58px 0 0;
+    text-align: right;
+    * {
+        margin: 0;
+        vertical-align: top;
+    }
+}
+
+#topsearch-q {
+    width: 140px;
+    height: 20px;
+    background-color: white;
+    border-top: 1px solid #666666;
+    border-left: 1px solid #666666;
+    border-bottom: 1px solid #666666;
+    border-right: 0 none;
+    padding: 4px;
+    font-size: 12px;
+    text-indent: 6px;
+    background-image: none;
+    box-shadow: inset 0 0 1px #999999;
+}
+
+#logo {
+    float: left;
+    margin-top: 28px;
+    cursor: default;
+    color: #000000;
+    img {
+        float: left;
+        margin: 0;
+        border: 0;
+    }
+    :link, :visited {
+        color: #000000;
+        &:hover, &:active {
+            text-decoration: none;
+        }
+    }
+    h1 {
+        font-family: $fonts-heading;
+        margin: 0 0 0 64px;
+        font-weight: normal;
+        line-height: 41px;
+        text-transform: uppercase;
+        font-size: 34px;
+        a { padding-left: 17px; display: block; }
+    }
+    h2 {
+        margin: 0 0 0 64px;
+        font-size: 17px;
+        font-weight: normal;
+        a { padding-left: 17px; display: block; text-align: center; }
+    }
+}
+
+// Top dropdowns (Language and Log in / Register)
+
+html[lang=fr] {
+    // login/register needs to be 70px wider.
+    // #topdrops included to increase specificity so it's taken
+    $shift: 70px;
+    #topdrops #toplogin {
+        > p {
+            width: 100px + $shift;
+            background-position: (112px + $shift) 10px;
+        }
+        .topdrop {
+            margin-left: -110px + $shift;
+        }
+    }
+}
+
+.header {
+    #topdrops {
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: $coloured-bg-text;
+    }
+    .topdrop {
+        background-color: $top-drops;
+        padding: 10px;
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        display: none;
+        position: absolute;
+        z-index: 10;
+    }
+    #topdrops {
+        > li {
+            &:hover .topdrop {
+                display: block;
+            }
+            float: left;
+        }
+        #languages {
+            margin-right: 10px;
+            .topdrop {
+                width: 130px;
+                padding: 0;
+                border-radius: 0 0 5px 5px;
+                -moz-border-radius: 0 0 5px 5px;
+            }
+        }
+    }
+}
+
+#languages {
+    a {
+        display: block;
+        padding: 10px 10px 10px 50px;
+        color: $coloured-bg-text;
+        font-size: 11px;
+        line-height: 11px;
+        &.current {
+            background-color: mix($colours-1, $colours-2, 75%);
+        }
+        &:hover {
+            background-color: $colours-1;
+            text-decoration: none;
+        }
+    }
+    span {
+        background: url('../images/flags.png') no-repeat;
+        display: block;
+        margin-left: -28px;
+        float: left;
+        height: 11px;
+        width: 16px;
+    }
+    li:last-child a:hover {
+        border-radius: 0 0 5px 5px;
+        -moz-border-radius: 0 0 5px 5px;
+    }
+    .en span {
+        background-position: 0 0;
+    }
+    .de span {
+        background-position: -16px 0;
+    }
+    .fr span {
+        background-position: -32px 0;
+    }
+    .it span {
+        background-position: -48px 0;
+    }
+    .es span {
+        background-position: -64px 0;
+    }
+    .pt span {
+        background-position: -80px 0;
+    }
+    .cs span {
+        background-position: -96px 0;
+    }
+    .ru span {
+        background-position: -112px 0;
+    }
+    .ja span {
+        background-position: -128px 0;
+    }
+    &.old {
+        span {
+            background-image: url('../images/flags-old.png');
+            display: block;
+            margin-left: -28px;
+            float: left;
+            height: 12px;
+            width: 14px;
+        }
+        .en span {
+            background-position: 0 0;
+        }
+        .de span {
+            background-position: -14px 0;
+        }
+        .fr span {
+            background-position: -28px 0;
+        }
+        .it span {
+            background-position: -42px 0;
+        }
+        .es span {
+            background-position: -56px 0;
+        }
+        .cs span {
+            background-position: -70px 0;
+        }
+        .pt span {
+            background-position: -84px 0;
+        }
+        .ru span {
+            background-position: -98px 0;
+        }
+        .ja span {
+            background-position: -112px 0;
+        }
+    }
+}
+
+.header {
+    #topdrops {
+        > li > p {
+            display: block;
+            border-radius: 0 0 5px 5px;
+            -moz-border-radius: 0 0 5px 5px;
+            background: $top-drops url('../images/down-arrow.png') 112px 10px no-repeat;
+            margin: 0;
+            width: 100px;
+            padding: 5px 20px 7px 10px;
+        }
+        p {
+            cursor: default;
+        }
+        > li:hover > p {
+            padding-bottom: 20px;
+            border-radius: 0;
+            -moz-border-radius: 0;
+        }
+    }
+    #languages .topdrop {
+        list-style-type: none;
+    }
+}
+
+#toplogin .topdrop {
+    margin-left: -110px;
+    width: 220px;
+    border-radius: 5px 0 5px 5px;
+    -moz-border-radius: 5px 0 5px 5px;
+}
+
+#toplogin-head {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+#toplogin {
+    label {
+        margin-top: 12px;
+        margin-bottom: 3px;
+        display: block;
+    }
+    input {
+        display: block;
+    }
+}
+
+#toplogin-submit {
+    font-size: 14px;
+    margin-top: 12px;
+    width: 100px;
+    padding: 3px;
+    float: left;
+}
+
+#toplogin-username, #toplogin-password {
+    width: 212px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+//@if false {
+    // Makes content forms (e.g. donate) generally less pleasant, and I don't think it improves the login dropdown either.
+input {
+    &[type=text], &[type=password], &[type=email] {
+        border: 1px solid #000000;
+        background-color: white;
+        background-image: -moz-linear-gradient(top, #e6e6e6, #f7f7f7);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#f7f7f7));
+    }
+    &[type=submit], &[type=button] {
+        border: 1px solid #444444;
+        background-color: white;
+        background-image: -moz-linear-gradient(top, white, #b6b6b6);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#b6b6b6));
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        padding: 0.5em 1em;
+    }
+}
+//}
+
+#toplogin-register {
+    float: right;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+#toplogin-alternate {
+    span {
+        display: block;
+        float: left;
+        margin: 10px 0;
+        font-size: 12px;
+    }
+    a {
+        display: block;
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin-left: 15px;
+        background-image: url(../images/login-sprite.png);
+    }
+    #toplogin-google { clear: left; margin-left: 0; }
+    #toplogin-facebook { background-position: -24px; }
+    #toplogin-twitter { background-position: -48px; }
+    #toplogin-yahoo { background-position: -72px; }
+    #toplogin-live { background-position: -96px; }
+    #toplogin-wordpress { background-position: -120px; }
+}
+
+// Header: nav
+
+#cleartop {
+    height: 110px;
+}
+
+#header-right {
+    float: right;
+}
+
+.header .nav {
+    background-color: $colours-1;
+    background-image: -moz-linear-gradient(top, $menu-gradient-top, $menu-gradient-bottom);
+    background-image: -webkit-gradient(linear, left top, left bottom, from($menu-gradient-top), to($menu-gradient-bottom));
+    border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid $menu-border-bottom;
+    height: 52px;
+    clear: both;
+    text-align: right;
+    z-index: 5;
+    position: relative;
+    > ul {
+        margin: 0;
+        padding: 0;
+        border-left: 1px solid $colours-sep-2;
+    }
+    :link, :visited {
+        &, &:hover, &:active {
+            color: $coloured-bg-text;
+            text-decoration: none;
+        }
+    }
+    li {
+        margin: 0;
+        padding: 0;
+        float: left;
+        position: relative;
+        list-style: none;
+        text-align: left;
+    }
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 8px 10px;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+    }
+    > ul {
+        > li > a {
+            text-transform: uppercase;
+            border-right: 1px solid $colours-sep-2;
+            border-left: 1px solid $colours-sep-1;
+            padding: 17px 23px;
+            outline: 0;
+        }
+        a.current, li:hover > a, li > a:focus {
+            background: $colours-2;
+            background-image: -moz-linear-gradient(top, $menu-gradient-hover-top, $menu-gradient-hover-bottom);
+            background-image: -webkit-gradient(linear, left top, left bottom, from($menu-gradient-hover-top), to($menu-gradient-hover-bottom));
+        }
+        ul a:hover, ul a:focus {
+            background: $menu-item-hover;
+        }
+        ul a {
+            outline: 0;
+        }
+    }
+    li {
+        ul {
+            background: $colours-1;
+            display: none;
+            margin: 0;
+            padding: 0;
+            width: 155px;
+            position: absolute;
+            top: 52px;
+            left: 0;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+            border-top: 1px solid $menu-sub-border-top;
+            a {
+                font-size: 13px;
+            }
+        }
+        &:hover ul {
+            display: block;
+        }
+        li {
+            float: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    // clearfix
+    > ul {
+        &:after {
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+        display: inline-block;
+    }
+    #hnav-donate a {
+        color: $donate-link-colour;
+        border-right: 0 none;
+        border-radius: 0 10px 0 0;
+        -moz-border-radius: 0 10px 0 0;
+    }
+}
+
+// Footer
+
+.footer {
+    border-top: 4px solid $footer-top-colour;
+    background-color: $colours-2;
+    background-image: -moz-radial-gradient(center 20px, circle, $colours-1 0, $colours-2 300px);
+    background-image: -webkit-gradient(radial, 50% 20, 0, 50% 20, 300, from($colours-1), to($colours-2));
+    border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    padding: 20px;
+    color: $coloured-bg-text;
+    font-size: 12px;
+    margin-bottom: 20px;
+    line-height: 16px;
+    a {
+        &:link, &:visited {
+            color: $coloured-bg-text;
+            text-decoration: none;
+            &:hover, &:active {
+                color: $coloured-bg-text;
+                text-decoration: underline;
+            }
+        }
+    }
+    .nav > ul > li {
+        > {
+            a {
+                text-transform: uppercase;
+                font-size: 14px;
+            }
+            ul {
+                padding: 25px 0 0 8px;
+                > li {
+                    padding: 2px;
+                }
+            }
+        }
+        float: left;
+        // TODO: may need to round() this for some browsers? (Works in Firefox)
+        width: (960px - (20px * 2)) / $num-nav-categories - 5px;
+        margin-right: 5px;
+        vertical-align: top;
+        margin-bottom: 40px;
+    }
+    p {
+        clear: left;
+        text-align: center;
+        font-size: 11px;
+        margin-bottom: 0;
+    }
+    .nav ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+}
+
+#final-footer {
+    text-align: center;
+    color: lighten($text-colour, 40%);
+    margin-bottom: 20px;
+    :link, :visited {
+        &, &:hover, &:active {
+            color: $link-light;
+        }
+    }
+}
+
+// General styles
+
+.float-right {
+    float: right;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.clearer {
+    clear: both;
+}
+
+br.clearer {
+    font-size: 0;
+}
+
+// Buttons
+
+a.button {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    background: $button-colour-plain;
+    background-image: -moz-linear-gradient(top, $button-colour-top, $button-colour-bottom);
+    background-image: -webkit-gradient(linear, left top, left bottom, from($button-colour-top), to($button-colour-bottom));
+    border: 1px solid #999999;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    color: $button-text-colour;
+    outline: 0;
+
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+        background: $button-colour-plain-hover;
+        background-image: -moz-linear-gradient(top, $button-colour-top, $button-colour-bottom-hover);
+        background-image: -webkit-gradient(linear, left top, left bottom, from($button-colour-top), to($button-colour-bottom-hover));
+    }
+
+    &.download {
+        span {
+            display: block;
+            background: url('../images/download-button-icon.png') 0 50% no-repeat;
+            padding: 10px 40px 10px 10px;
+            margin: -10px -10px;
+        }
+        &.w140 span { background-position: 104px 50%; }
+        &.w160 span { background-position: 124px 50%; }
+        &.w210 span { background-position: 174px 50%; }
+    }
+    &.darkbg { border-color: #666666; }
+    &.center { text-align: center; }
+    &.left   { text-align: left; }
+    &.w140 { width: 114px; }
+    &.w160 { width: 134px; }
+    &.w210 { width: 184px; }
+    &.glow { box-shadow: 0 0 10px #333333; }
+    &.lighter { color: #666666; }
+}
+
+.download-box {
+    text-align: center;
+    &.w160 { width: 160px; }
+    > span { font-size: 11px; }
+}
+
+.with-short-right-sidebar > div.wrapper {
+    background: url(../images/soft-sidebar-sep.png) transparent (960px - 240px - 6px) 70px no-repeat;
+}
+
+#left-column {
+    float: left;
+    width: 680px;
+    padding: 0 20px 0 0;
+    > h2:first-child { margin-top: 18px; }
+}
+
+hr {
+    margin: 30px 0;
+    color: #d2d2d2;
+    background-color: #d2d2d2;
+    border: 0;
+    height: 1px;
+    width: 100%;
+}
+
+.pager {
+    margin: 50px 0 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+        float: left;
+        margin: 0 10px 0 0;
+        font-size: 11px;
+        line-height: 11px;
+        color: #5d5d5d;
+    }
+    a {
+        border: 1px solid #d6d6d6;
+        background-color: #ffffff;
+        &.current {
+            border: 1px solid #8d8d8d;
+            background-color: #d6d6d6;
+            cursor: default;
+            &:hover, &:active {
+                border-color: #8d8d8d;
+            }
+        }
+        padding: 4px 8px;
+        color: #5d5d5d;
+        &:hover, &:active {
+            text-decoration: none;
+            border-color: #333333;
+        }
+        &.previous {
+            margin-right: 5px;
+        }
+        &.next {
+            margin-left: 5px;
+        }
+    }
+    &.em { // Emphasised style for when it's not pages (e.g. version numbers on screenshots page)
+        margin-top: 20px;
+        li {
+            font-size: 12px;
+            line-height: 20px;
+        }
+        a {
+            padding: 6px 12px;
+            color: $link-dark;
+        }
+    }
+}
+
+#right-sidebar {
+    float: right;
+    width: 200px;
+    padding: 0 0 0 20px;
+    ul {
+        // Reduce the space before the bullet by another 10px (to almost no space)
+        padding-left: 20px;
+    }
+    .download-box {
+        margin: 20px 0 40px;
+    }
+    h2 {
+        &, :link, :visited {
+            color: $text-colour;
+            font-size: 16px;
+        }
+    }
+    > h2:first-child { margin-top: 18px; }
+
+    hr {
+        margin: 30px 0;
+        color: #e6e6e6;
+        background-color: #e6e6e6;
+        border: 0;
+        height: 1px;
+        width: 100%;
+    }
+}
+
+#page-fake-404 #credits {
+    margin: 4em 0 0;
+    text-align: right;
+    font-style: italic;
+}
+
+.box, .box-2, .box-3 {
+    margin-bottom: 16px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    padding: 15px 15px 15px 25px;
+    background-color: #e6e6e6;
+}
+
+$box-gap: 16px;
+$box-padding: 13px;
+.box, .box-2, .box-3 {
+    float: left;
+    margin: 0 $box-gap $box-gap 0;
+    padding: $box-padding ($box-padding - 2px) $box-padding $box-padding;
+    > p:last-child {
+        margin-bottom: 0;
+    }
+    > h2:first-child {
+        margin-top: 0;
+    }
+}
+.box-fancy {
+    background: -moz-radial-gradient(80% 80%, #ffffff, #e6e6e6);
+    box-shadow: 2px 2px 6px rgba(0,0,0,.5);
+    // We have the extra space to play with for up to 3-column, 680px but only using 665px normally
+    margin: 0 ($box-gap + 5px) ($box-gap + 5px) 0;
+}
+.box-last { margin-right: 0; }
+.box-2 { width: (664px - 1 * $box-gap) / 2 - $box-padding - ($box-padding - 2px); }
+.box-3 { width: (665px - 2 * $box-gap) / 3 - $box-padding - ($box-padding - 2px); }
+
+@import 'front';
+@import 'download';
+@import 'features';
+@import 'get-involved';
+@import 'news';
+@import 'books';
+@import 'screenshots';
+@import 'other';

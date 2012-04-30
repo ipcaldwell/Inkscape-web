@@ -1,0 +1,15 @@
+{% extends "base_about.html" %}
+{% block title %}Gallery: Web Design{% endblock %}
+{% block pagetitle %}Web design{% endblock %}
+{% block body-classes %}page-gallery{% endblock %}
+{% block left-column %}
+<p>These examples explore websites designed by various people using Inkscape.</p>
+
+<div class="category">
+	<a href="{{ MEDIA_URL }}images/gallery/inkscape-moonshine.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/inkscape-moonshine_thumb.png" alt=""></a>
+	<h2>Moonshine by Jakub "Jimmac" Steiner</h2>
+	{# Link to http://www.moonshine.cc/ removed; parked #}
+	<p>Inkscape allows to export multiple objects into bitmaps, naming the exported PNGs according to the respective object ids. The export dialog also allows to select to only export the selected object and hide everything else. Using just those two features along with the possibility to create 'blank' objects with no stroke or fill and grouping objects together gives a web designer a great tool to not only mock up a site layout, but also use the very same drawing for exporting the actual image elements for the final site. The outline view helps to select the 'blank' objects for manipulation.</p>
+</div>
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends "about/about-base.html" %}
+
+{% block pageid %}page-screenshots{% endblock %}
+{% block title %}Inkscape screenshots{% endblock %}
+{% block pagetitle %}Inkscape screenshots{% endblock %}
+
+{% block breadcrumbs %}<a href="{{ url_for('home') }}">Home</a>&gt; About{% endblock %}
+
+{% block main %}
+    <script>
+        function changeScreenshot(e) {
+            $('#screenshot-' + changeScreenshot.current + '-thumb').removeClass('current');
+            $('#screenshot-' + changeScreenshot.current).removeClass('current');
+            changeScreenshot.current = e.id.replace(/^screenshot-(\d+)-thumb/, '$1');
+            $(e).addClass('current');
+            $('#screenshot-' + changeScreenshot.current).addClass('current');
+            return false;
+        }
+        changeScreenshot.current = 1;
+    </script>
+    <h2>Screenshots of Inkscape {{ version }}</h2>
+
+    <ul id="screenshots-big">
+        {% for screenshot in screenshots %}
+        <li class="screenshot{% if loop.first %} current{% endif %}" id="screenshot-{{ loop.index }}">
+        
+            <a href="{{ url_for('static', filename='images/screenshots/') + screenshot.filename }}" class="screenshot-fullsize"><img src="{{ url_for('static', filename='images/screenshots/') + screenshot.filename }}"></a>
+            {{ screenshot.description|safe }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <ul id="screenshots-thumbnails">
+        {% for screenshot in screenshots %}
+        <li><a class="screenshot{% if loop.first %} current{% endif %}" id="screenshot-{{ loop.index }}-thumb" onclick="return changeScreenshot(this)" href="{{ url_for('static', filename='images/screenshots/') + screenshot.filename }}"><img src="{{ url_for('static', filename='images/screenshots/') + screenshot.filename }}"></a></li>
+        {% endfor %}
+    </ul>
+
+    <p>See screenshots of other versions:</p>
+    <ul class="pager em">
+        {% for v in versions %}{% if v != version %}
+        <li><a href="/screenshots/{{ v }}/">{{ v }}</a></li>
+        {% endif %}{% endfor %}
+    </ul>
+{% endblock main %}

@@ -1,0 +1,30 @@
+#page-about-features {
+	h3 {
+		font-size: 12px;
+		margin: 15px 0 0;
+		font-weight: bold;
+		color: $text-colour;
+	}
+
+	div p { margin-top: 0; }
+
+	#notable-features-container {
+		div {
+			float: left;
+			width: (680px - 3 * 30px) / 4;
+			margin-right: 30px;
+			&.last { margin-right: 0; }
+		}
+		h3 { margin-top: 2px; }
+	}
+	#more-things-container {
+		clear: left;
+		padding-top: 20px;
+		div {
+			float: left;
+			width: (680px - 2 * 25px) / 3;
+			margin-right: 25px;
+			&.last { margin-right: 0; }
+		}
+	}
+}

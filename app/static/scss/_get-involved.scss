@@ -1,0 +1,29 @@
+#page-community-get-involved {
+	#left-column .box {
+		height: 160px;
+		background-position: 12px 22px;
+		background-repeat: no-repeat;
+		h3 {
+			background-position: 0 10px;
+			background-repeat: no-repeat;
+			margin: 0;
+			padding: 0;
+			color: #000000;
+			a {
+				display: block;
+				color: #000000;
+				padding: 20px 0 20px 60px;
+			}
+		}
+		p { margin-top: 4px; }
+	}
+	#spread-the-word      h3 { background-image: url(../images/spread-word.png); }
+	#help-others          h3 { background-image: url(../images/help-others.png); }
+	#test-and-report-bugs h3 { background-image: url(../images/report-bugs.png); }
+	#write                h3 { background-image: url(../images/write.png); }
+	#translate            h3 { background-image: url(../images/translate.png); }
+	#code-and-develop     h3 { background-image: url(../images/code-develop.png); }
+	#make-art             h3 { background-image: url(../images/make-art.png); }
+	#provide-feedback     h3 { background-image: url(../images/feedback.png); }
+	#donate               h3 { background-image: url(../images/donate.png); }
+}

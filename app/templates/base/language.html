@@ -1,0 +1,6 @@
+<p>Language</p>
+<ul class="topdrop">
+    {% for language in languages %}
+    <li class="{{ language.code }}"><a href="http://{{ language.code }}.dev.inkscape.org/"><span></span>{{ language.name }}</a>
+    {% endfor %}
+</ul>

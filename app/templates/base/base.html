@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ session.language or "en" }}">
+    <head>
+        <meta charset="utf-8">
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
+        <title>{% block title %}Inkscape: Draw Freely.{% endblock title %}</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        {% block head %}
+        {% endblock head %}
+    </head>
+    <body id="{% block pageid %}{% endblock %}" class="{% block pageclass %}{% endblock %}">
+        <div class="header">
+            {% include "base/header.html" %}
+        </div>
+        {% block precontent %}{% endblock precontent %}
+        <div id="content" class="{% block content_classes %}{% endblock content_classes %}">
+            {% block content %}{% endblock content %}
+        </div>
+        <div class="footer">
+            {% include "base/footer.html" %}
+        </div>
+        <p id="final-footer">Website designed by <a href="http://skymaiden.com/">Hinerangi Courtenay</a> in Inkscape and developed by <a href="http://chrismorgan.info/">Chris Morgan</a> and <a href="http://jeffkayser.com/">Jeff Kayser</a></p>
+    </body>
+</html>
+

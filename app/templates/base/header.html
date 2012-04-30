@@ -1,0 +1,89 @@
+    <div id="cleartop">
+        <div id="logo">
+            <a href="/"><img src="{{ url_for('static', filename='images/inkscape-logo.png') }}" width="64" height="64" alt=""></a>
+            <h1><a href="/" tabindex="-1">Inkscape</a></h1>
+            <h2><a href="/" tabindex="-1">Draw Freely.</a></h2>
+        </div>
+        <div id="header-right">
+            <ul id="topdrops">
+                <li id="languages">
+                    {% include "base/language.html" %}
+                </li>
+                <li id="toplogin">
+                    {% include "base/login.html" %}
+                </li>
+            </ul>
+            <form id="topsearch" action="/search" method="get">
+                <input type="text" name="q" id="topsearch-q" placeholder="Search"><input type="image" id="topsearch-button" src="{{ url_for('static', filename='images/search-button.png') }}" alt="Search">
+            </form>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="topnav-about">
+                <a href="/about/">About</a>
+                <ul>
+                    <li><a href="/about/">Overview</a></li>
+                    <li><a href="/about/features/">Features</a></li>
+                    <li><a href="/screenshots/">Screenshots</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/about/testimonials/">User testimonials</a></li>
+                </ul>
+            </li>
+            <li class="topnav-download">
+                <a href="/download/">Download</a>
+                <ul>
+                    <li><a href="/download/">Official releases</a></li>
+                    <li><a href="/download/development/">Development versions</a></li>
+                    <li><a href="/download/addons/">Add-ons</a></li>
+                    <li><a href="/download/clipart/">Clip art</a></li>
+                </ul>
+            </li>
+            <li class="topnav-learn">
+                <a href="/learn/">Learn</a>
+                <ul>
+                    <li><a href="/learn/documentation/">User documentation</a></li>
+                    <li><a href="/learn/books/">Books</a></li>
+                    <li><a href="/learn/tutorials/">Tutorials</a></li>
+                    <li><a href="/learn/manuals/">Manuals</a></li>
+                    <li><a href="/learn/wiki/">Wiki</a></li>
+                </ul>
+            </li>
+            <li class="topnav-community">
+                <a href="/community/">Community</a>
+                <ul>
+                    <li><a href="/community/get-involved/">Get Involved</a></li>
+                    <li><a href="/community/connect/">Connect</a></li>
+                    <li><a href="/community/forums-and-blogs/">Forums &amp; blogs</a></li>
+                    <li><a href="/community/mailing-lists/">Mailing lists</a></li>
+                    <li><a href="/community/help/">Help &amp; support</a></li>
+                    <li><a href="/community/contact/">Contact</a></li>
+                    <li><a href="/donate/">Donate</a></li>
+                </ul>
+            </li>
+            <li class="topnav-developers">
+                <a href="/developers/">Developers</a>
+                <ul>
+                    <li><a href="/developers/docs/">Developer docs</a></li>
+                    <li><a href="http://launchpad.net/inkscape">Launchpad</a></li>
+                    <li><a href="/developers/roadmap/">Roadmap</a></li>
+                    <li><a href="/developers/bazaar/">Bazaar</a></li>
+                    <li><a href="/developers/code/">Source code</a></li>
+                </ul>
+            </li>
+            <li class="topnav-news`">
+                <a href="/news/">News</a>
+                <ul>
+                    <li><a href="/news/category/releases/">Releases</a></li>
+                    <li><a href="/news/category/contests/">Contests</a></li>
+                    <li><a href="/news/category/events/">Events</a></li>
+                    <li><a href="/news/category/press/">Press</a></li>
+                </ul>
+            </li>
+            <li class="topnav-donate">
+            <li id="hnav-donate">
+                <a href="/donate/">Donate</a>
+            </li>
+        </ul>
+    </div>

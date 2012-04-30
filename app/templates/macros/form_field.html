@@ -1,0 +1,17 @@
+{% macro render_field(field) -%}
+    <li>
+        {{ field.label(class="label") }}
+            <br>
+        {% if field.errors -%}
+            {% set css_class = kwargs.pop('class', '') + ' has_error' -%}
+            {{ field(class=css_class|trim, **kwargs) }}
+            <ul class="errors">
+                {% for error in field.errors -%}
+                <li>{{ error|e }}</li>
+                {% endfor -%}
+            </ul>
+        {% else -%}
+            {{ field(**kwargs) }}
+        {% endif -%}
+    </li>
+{%- endmacro %}

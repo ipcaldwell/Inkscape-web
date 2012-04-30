@@ -1,0 +1,265 @@
+#page-front {
+	.front-banner {
+		margin: 0;
+		height: 365px;
+		background-color: #808080;
+		background-repeat: no-repeat;
+		// display: none;
+		opacity: 0;
+		position: relative;
+		&.current {
+			// display: block;
+			opacity: 1;
+			z-index: 1;
+			transition: opacity 0.4s ease 0s;
+			-moz-transition: opacity 0.4s ease 0s;
+			-webkit-transition: opacity 0.4s ease 0s;
+		}
+		transition: opacity 0s ease 0.4s;
+		-moz-transition: opacity 0s ease 0.4s;
+		-webkit-transition: opacity 0s ease 0.4s;
+		margin-top: -365px;
+		p {
+			font-size: 18px;
+			line-height: 25px;
+		}
+	}
+	#front-banner-features {
+		background-image: url('../images/front-banner-features-background.png');
+		background-color: #eeeeee;
+		> div {
+			padding: 20px 20px 20px 300px;
+			position: absolute;
+		}
+	}
+	#front-banner-gallery {
+		> div {
+			padding: 80px 360px;
+			position: absolute;
+			text-align: center;
+		}
+	}
+	#front-banner-learning {
+		> div {
+			padding: 80px 360px;
+			position: absolute;
+			text-align: center;
+		}
+	}
+	#front-banners {
+		height: 365px;
+		border-bottom: 1px solid #000000;
+	}
+
+	#front-banner-overview {
+		margin-top: 0;
+		&.car {
+			background-image: url('../images/front-banner-car.png');
+		}
+		&.one-day-in-farm {
+			background-image: url('../images/front-banner-one-day-in-farm.png');
+			background-color: #000000;
+		}
+		&.grass {
+			background-image: url('../images/front-banner-grass.png');
+		}
+		> div {
+			width: 410px;
+			margin: 30px 30px 0 30px;
+			height: 250px;
+		}
+		&.left > div {
+			float: left;
+		}
+		&.right > div {
+			float: right;
+		}
+		&.bottom > div {
+			margin-top: 100px;
+			height: 180px;
+		}
+		&.top > div {
+			margin-top: 30px;
+		}
+
+		// Read more
+		#front-banner-read-more {
+			float: left;
+		}
+		&.buttons-right #front-banner-read-more {
+			margin-left: 100px;
+		}
+		&.buttons-right #front-banner-download-box {
+			float: right;
+		}
+		&.buttons-left #front-banner-download-box {
+			float: left;
+			margin-left: 30px;
+		}
+		div p {
+			background-color: rgba(255, 255, 255, 0.7);
+			border-radius: 6px;
+			-moz-border-radius: 6px;
+			font-size: 18px;
+			line-height: 26px;
+			padding: 10px;
+			margin: 0 0 25px 0;
+		}
+
+		// Download
+		#front-banner-download-box {
+			text-align: center;
+			color: #ffffff;
+
+			> span {
+				font-size: 11px;
+			}
+		}
+		&.light #front-banner-download-box {
+			color: #000000;
+		}
+
+		p#front-banner-author {
+			clear: both;
+			display: block;
+			padding: 3px 25px 2px;
+			font-size: 12px;
+			line-height: 0; //15px;
+			&.right {
+				text-align: right;
+			}
+			&.white {
+				background-color: rgba(255, 255, 255, 0.7);
+			}
+			&.black {
+				background-color: rgba(0, 0, 0, 0.7);
+			}
+		}
+	}
+
+	#front-banner-tabs {
+		list-style: none;
+		padding-left: 0;
+		margin: -70px 19px -30px;
+		z-index: 2;
+		position: relative;
+		height: 100px;
+		line-height: 16px;
+		li {
+			float: left;
+			width: (960px - 2 * 20px) / 4;
+			border-color: black;
+			border-style: solid;
+			border-width: 1px 0;
+		}
+		a {
+			display: block;
+			height: 60px;
+			padding: 19px 15px 20px 60px;
+			background-color: $colours-1;
+			background-image: -moz-linear-gradient(top, $menu-gradient-top, $menu-gradient-bottom);
+			background-image: -webkit-gradient(linear, left top, left bottom, from($menu-gradient-top), to($menu-gradient-bottom));
+			border-width: 1px 1px 0 1px;
+			border-style: solid;
+			border-color: $colours-sep-1 $colours-sep-2 $menu-gradient-bottom $colours-sep-1;
+			text-decoration: none;
+			color: $coloured-bg-text;
+			outline: 0;
+			&:hover, &:focus, &.current {
+				background-color: $colours-2;
+				background-image: -moz-linear-gradient(top, $menu-gradient-hover-top, $menu-gradient-hover-bottom);
+				background-image: -webkit-gradient(linear, left top, left bottom, from($menu-gradient-hover-top), to($menu-gradient-hover-bottom));
+			}
+		}
+		span {
+			background-image: url("../images/front-icons.png");
+			background-repeat: no-repeat;
+			width: 32px;
+			height: 32px;
+			float: left;
+			margin-left: -45px;
+		}
+		strong {
+			font-size: 17px;
+			font-weight: normal;
+			display: block;
+			margin: 0 0 14px -45px;
+		}
+
+		#front-banner-tab-overview {
+			border-left-width: 1px;
+			width: (960px - 2 * 20px) / 4 - 1px;
+			border-radius: 5px 0 0 5px;
+			-moz-border-radius: 5px 0 0 5px;
+		}
+		#front-banner-tab-learning {
+			border-right-width: 1px;
+			width: (960px - 2 * 20px) / 4 - 1px;
+			border-radius: 0 5px 5px 0;
+			-moz-border-radius: 0 5px 5px 0;
+		}
+
+		#front-banner-tab-overview a {
+			border-radius: 4px 0 0 4px;
+			-moz-border-radius: 4px 0 0 4px;
+		}
+		//#front-banner-tab-overview span { background-position: 0; }
+		#front-banner-tab-features span { background-position: -32px; }
+		#front-banner-tab-gallery span  { background-position: -64px; }
+		#front-banner-tab-learning span { background-position: -96px; }
+		#front-banner-tab-learning a {
+			border-radius: 0 4px 4px 0;
+			-moz-border-radius: 0 4px 4px 0;
+		}
+	}
+
+	#content {
+		// Increased from 100px to 132px
+		background-image: -moz-linear-gradient(top, #eeeeee, white 132px);
+		background-image: -webkit-gradient(linear, left top, left 132, from(#eeeeee), to(white));
+		padding-top: 60px;
+		min-height: 0;
+		> br {
+			clear: both;
+		}
+		$width: 920px;
+		$padding: 12px; // padding between column and line
+		$col12-width: 210px;
+		$col3-width: $width - 2 * $col12-width - 4 * $padding - 2; // the 2 is border
+
+		.column1, .column2, .column3 { float: left; height: 360px; }
+		.column1 { padding: 0 $padding 0 0; }
+		.column2 { padding: 0 $padding; }
+		.column3 { padding: 0 0 0 $padding; }
+		.column1, .column2 {
+			width: $col12-width;
+			border-right: 1px solid #b3b3b3; 
+			//width: 286px;
+		}
+		.column3 { width: $col3-width; }
+
+		h1 {
+			font-family: $fonts-normal;
+			background-color: $front-block-header-bg; //$colours-1;
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			font-size: 18px;
+			line-height: 18px;
+			padding: 11px 12px;
+			color: $front-block-header-text;
+			//font-weight: bold;
+			margin-top: 0;
+			a {
+				display: block;
+				margin: -11px -12px;
+				padding: 11px 12px;
+				color: inherit;
+			}
+		}
+		h2 {
+			color: $link-dark;
+			font-size: 13px;
+			font-weight: bold;
+		}
+	}
+}

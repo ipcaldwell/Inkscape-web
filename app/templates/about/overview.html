@@ -1,0 +1,15 @@
+{% extends "about/about-base.html" %}
+
+{% block title %}About Inkscape{% endblock title %}
+{% block pageid %}page-about{% endblock pageid %}
+{% block pagetitle %}Inkscape Overview{% endblock pagetitle %}
+{% block breadcrumb %}<a href="/">Home</a> &gt; <a>About</a>{% endblock breadcrumb %}
+{% block content_classes %}with-short-right-sidebar{% endblock content_classes %}
+
+{% block main %}
+    <h2>What is Inkscape?</h2>
+    <p class="summary">Inkscape is professional quality vector graphics software which runs on Windows, Mac OS X and Linux. It is used by design professionals and hobbyists worldwide, for creating a wide variety of graphics such as illustrations, icons, logos, diagrams, maps and web graphics. Inkscape uses the <a href="http://www.w3.org">W3C</a> open standard <a href="http://www.w3.org/Graphics/SVG/">SVG</a> (Scalable Vector Graphics) as its native format, and is free and open-source software.</p>
+    <video width="640" height="360" poster="{{ url_for('static', filename='images/video-640x360-poster.png') }}"></video>
+    <p>Inkscape has sophisticated drawing tools with capabilities comparable to Adobe Illustrator, CorelDRAW and Xara Xtreme. It can import and export various file formats, including SVG, AI, EPS, PDF, PS and PNG. It has a <a href="/about/features/">comprehensive feature set</a>, a <a href="/about/screenshots/">simple interface</a>, multi-lingual support and is designed to be extensible; users can customize Inkscape's functionality with <a href="/download/addons/">add-ons</a>.</p>
+    <p>The Inkscape project has a growing international <a href="/community/">user community</a>, and many <a href="/learn/">learning materials</a> exist to help get you started with your creations. <a href="/community/help/">Help and support</a> is provided by the community, and there are lots of ways for you to <a href="/community/get-involved/">get involved</a> if you want to help improve the Inkscape project.</p>
+{% endblock main %}
