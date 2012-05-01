@@ -2,12 +2,12 @@
 
 import os
 from collections import namedtuple, OrderedDict
-from functools import wraps
 
 from flask import escape, flash, Flask, g, redirect, render_template, request, send_from_directory, session, url_for
 
 from app import app
 from app import controller as c
+from .decorators import crumbs
 
 @app.route('/')
 def home():
@@ -59,9 +59,8 @@ def logout():
 def register():
     return redirect(url_for('users.register'))
 
-#@crumbs({'home': 'Home', 'about': 'About'})
-#TODO: Must be an OrderedDict
 @app.route('/about/')
+@crumbs({'home': 'Home', 'about': 'About'})
 def about():
     app.logger.debug("Entered /about")
     return render_template('about/overview.html')
@@ -75,14 +74,6 @@ def features():
 def screenshots():
     app.logger.debug("Entered /about/screenshots")
     return render_template('about/screenshots.html')
-
-def crumb(hierarchy=None):
-    def decorator(f):
-        @wraps(f)
-        def wrapped(*args, **kwargs):
-            f(*args, **kwargs)
-        return wrapped
-    return decorator
 
 @app.route('/gallery/')
 #@crumb({'home': 'Home', 'gallery': 'Gallery'})

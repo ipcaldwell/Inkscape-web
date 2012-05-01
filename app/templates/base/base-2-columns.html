@@ -3,7 +3,7 @@
 {% block content %}
 <div class="wrapper">
     <p id="breadcrumb">
-    {% block breadcrumbs %}{% endblock %}
+    {% block breadcrumb %}{{ g.crumbs|safe }}{% endblock %}
     </p>
 
     <h1>{% block pagetitle %}{% endblock %}</h1>
