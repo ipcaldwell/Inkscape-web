@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from collections import namedtuple, OrderedDict
+from collections import OrderedDict as odict
 
 from flask import escape, flash, Flask, g, redirect, render_template, request, send_from_directory, session, url_for
 
@@ -60,33 +60,37 @@ def register():
     return redirect(url_for('users.register'))
 
 @app.route('/about/')
-@crumbs({'home': 'Home', 'about': 'About'})
+@crumbs(odict((('home', 'Home'), ('about', 'About'))))
 def about():
     app.logger.debug("Entered /about")
     return render_template('about/overview.html')
 
 @app.route('/about/features/')
+@crumbs(odict((('home', 'Home'), ('about', 'About'), ('features', 'Features'))))
 def features():
     app.logger.debug("Entered /about/features")
     return render_template('about/features.html')
 
 @app.route('/screenshots/<version>')
+@crumbs(odict((('home', 'Home'), ('about', 'About'), ('screenshots', 'Screenshots'))))
 def screenshots():
     app.logger.debug("Entered /about/screenshots")
     return render_template('about/screenshots.html')
 
 @app.route('/gallery/')
-#@crumb({'home': 'Home', 'gallery': 'Gallery'})
+@crumbs(odict((('home', 'Home'), ('about', 'About'), ('gallery', 'Gallery'))))
 def gallery():
     app.logger.debug("Entered /about/gallery")
     return render_template('about/gallery.html')
 
 @app.route('/faq/')
+@crumbs(odict((('home', 'Home'), ('about', 'About'), ('faq', 'FAQ'))))
 def faq():
     app.logger.debug("Entered /about/faq")
     return render_template('about/faq.html')
 
 @app.route('/testimonials/')
+@crumbs(odict((('home', 'Home'), ('about', 'About'), ('testimonials', 'User testimonials'))))
 def testimonials():
     app.logger.debug("Entered /about/testimonials")
     return render_template('about/testimonials.html')

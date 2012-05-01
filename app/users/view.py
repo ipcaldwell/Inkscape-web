@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from collections import OrderedDict as odict
+
 from flask import Blueprint, flash, g, Markup, redirect, render_template, request, session, url_for
 from flask.ext.login import login_required, login_user, logout_user
 
 from app import app, login_manager
+from ..decorators import crumbs
 from . import db, LoginForm, module, RegistrationForm, User
 from . import oauth_twitter
 import controller
@@ -13,6 +16,7 @@ def unauthorized():
     abort(401)
 
 @module.route('/')
+@crumbs(odict((('home', 'Home'), ('.index', 'My profile'))))
 def index():
     return 'USER MODULE'
 
@@ -36,6 +40,7 @@ def before_request():
 #    return response
 
 @module.route('/login', methods=['GET', 'POST'])
+@crumbs(odict((('home', 'Home'), ('.login', 'Login'))))
 def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
@@ -84,9 +89,9 @@ def logout():
     return redirect(request.referrer)
 
 @module.route('/register', methods=['GET', 'POST'])
+@crumbs(odict((('home', 'Home'), ('.register', 'Sign up'))))
 def register():
     form = RegistrationForm(request.form)
-    print(request.method)
     if request.method == 'POST':
         if form.validate_on_submit():
             user = controller.register_user(form.username.data, form.email.data, form.password.data, form.accept_tos.data)

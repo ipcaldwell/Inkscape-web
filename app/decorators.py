@@ -15,9 +15,9 @@ def crumbs(hierarchy=None, class_link=None, class_current=None):
                     '' if class_link is None else ' class="{}"'.format(class_link),
                     hierarchy[item]))
             crumbs.append('<a{}>{}</a>'.format(
-                '' if class_current is None else ' class="{}"'.format(class_link),
+                '' if class_current is None else ' class="{}"'.format(class_current),
                 hierarchy[hierarchy.keys()[-1]]))
-            g.crumbs = ' &gt;  '.join(crumbs)
+            g.crumbs = ' &gt; '.join(crumbs)
             return f(*args, **kwargs)
         return wrapped
     return decorator
