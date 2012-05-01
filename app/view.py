@@ -47,6 +47,10 @@ def sitemap():
     rules = app.url_map.iter_rules()
     return render_template('sitemap.xml', url_root=url_root, rules=rules)
 
+@app.context_processor
+def inject_languages():
+    return dict(languages=app.config['LANGUAGES'])
+
 @app.route('/login', methods=['POST'])
 def login():
     return redirect(url_for('users.login'))
