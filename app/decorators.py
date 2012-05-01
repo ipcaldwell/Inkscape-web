@@ -19,12 +19,6 @@ def crumbs(hierarchy=None, class_link=None, class_current=None):
                 hierarchy[hierarchy.keys()[-1]]))
             g.crumbs = ' &gt;  '.join(crumbs)
             return f(*args, **kwargs)
-            #context = f(*args, **kwargs)
-            #if context is not None:
-            #    context = dict()
-            #elif not isinstance(context, dict):
-            #    return context
-            #context.update(crumbs=crumbs)
         return wrapped
     return decorator
 
