@@ -1,5 +1,9 @@
 {% macro render_field(field) -%}
     <li>
+    {% if field.type == "BooleanField" -%}
+        {{ field(**kwargs) }}
+        {{ field.label(class="label") }}
+    {% else -%}
         {{ field.label(class="label") }}
             <br>
         {% if field.errors -%}
@@ -13,5 +17,6 @@
         {% else -%}
             {{ field(**kwargs) }}
         {% endif -%}
+    {% endif -%}
     </li>
 {%- endmacro %}

@@ -1,8 +1,7 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% block alltitle %}Forbidden | Inkscape{% endblock %}
-{% block body-pageid %}403{% endblock %}
+{% block title %}{{ _("Forbidden") }} | {{ _("Inkscape") }}{% endblock %}
+{% block pageid %}403{% endblock %}
 {% block content %}
-<h1>Sorry, you're not allowed to see this.</h1>
-<p>Although you can do anything you like in Inkscape, you can't do anything you like in the Inkscape website. You can't view the contents of this page, for example.</p>
+<h1>{{ _("Sorry, you're not allowed to see this.") }}</h1>
+<p>{{ _("Although you can do anything you like in Inkscape, you can't do anything you like in the Inkscape website. You can't view the contents of this page, for example.") }}</p>
 {% endblock %}

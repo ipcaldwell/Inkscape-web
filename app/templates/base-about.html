@@ -1,9 +1,9 @@
 {% extends "base/base-2-columns.html" %}
 
-{% block title %}About Inkscape{% endblock %}
+{% block title %}{{ _("About Inkscape") }}{% endblock %}
 {% block pageid %}page-about{% endblock %}
-{% block pagetitle %}Inkscape Overview{% endblock %}
-{% block breadcrumb %}<a href="/">Home</a> &gt; <a>About</a>{% endblock %}
+{% block pagetitle %}{{ _("Inkscape Overview") }}{% endblock %}
+{% block breadcrumb %}<a href="/">{{ _("Home") }}</a> &gt; <a>{{ _("About") }}</a>{% endblock %}
 {% block content_classes %}with-short-right-sidebar{% endblock %}
 
 {% block head %}
@@ -15,17 +15,17 @@
 {% block main %}{% endblock main %}
 
 {% block sidebar %}
-    <h2>Download</h2>
-    <p>So you're ready to give Inkscape a try? Great! Download the latest version now.</p>
-    <div class="download-box w160"><a class="button download w160" href="/download/"><span>Free Download</span></a><span            class="download-version">Latest stable release: {% include "VERSION" %}</span></div>
-    <h2>Get Involved</h2>
-    <p>Participate in our thriving community! There are lots of ways to contribute to the Inkscape project.</p>
+    <h2>{{ _("Download") }}</h2>
+    <p>{{ _("So you're ready to give Inkscape a try? Great! Download the latest version now.") }}</p>
+    <div class="download-box w160"><a class="button download w160" href="/download/"><span>{{ _("Free Download") }}</span></a><span class="download-version">{{ _("Latest stable release: ") }}{% include "VERSION" %}</span></div>
+    <h2>{{ _("Get Involved") }}</h2>
+    <p>{{ _("Participate in our thriving community! There are lots of ways to contribute to the Inkscape project.") }}</p>
     <ul>
-        <li>Spread the word</li>
-        <li>Help others</li>
-        <li>Test and report bugs</li>
-        <li>Code and develop</li>
-        <li>Donate</li>
+        <li>{{ _("Spread the word") }}</li>
+        <li>{{ _("Help others") }}</li>
+        <li>{{ _("Test and report bugs") }}</li>
+        <li>{{ _("Code and develop") }}</li>
+        <li>{{ _("Donate") }}</li>
     </ul>
-    <p><a href="/community/get-involved">See all the ways you can help...</a></p>
+    <p><a href="/community/get-involved">{{ _("See all the ways you can help...") }}</a></p>
 {% endblock sidebar %}

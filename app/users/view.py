@@ -3,6 +3,7 @@
 from collections import OrderedDict as odict
 
 from flask import Blueprint, flash, g, Markup, redirect, render_template, request, session, url_for
+from flaskext.babel import lazy_gettext as __
 from flask.ext.login import login_required, login_user, logout_user
 
 from app import app, login_manager
@@ -16,7 +17,7 @@ def unauthorized():
     abort(401)
 
 @module.route('/')
-@crumbs(odict((('home', 'Home'), ('.index', 'My profile'))))
+@crumbs(odict((('home', __("Home")), ('.index', __("My profile")))))
 def index():
     return 'USER MODULE'
 
@@ -40,7 +41,7 @@ def before_request():
 #    return response
 
 @module.route('/login', methods=['GET', 'POST'])
-@crumbs(odict((('home', 'Home'), ('.login', 'Login'))))
+@crumbs(odict((('home', __("Home")), ('.login', __("Login")))))
 def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
@@ -50,13 +51,13 @@ def login():
         app.logger.info("Login attempt as '{0}'".format(form.username.data))
         if user and controller.is_password_correct(user, form.password.data):
             login_user(user)
-            app.logger.info("Login successful by '{0}'".format(user.username))
+            app.logger.info("Login successful by '{}'".format(user.username))
             #session['user_id'] = user.id
-            flash("Logged in as {0}".format(user.username), 'success')
+            flash(__("Logged in as {}").format(user.username), 'success')
             #return redirect(request.referrer)
             return redirect(url_for('.profile'))
-        app.logger.info("Login failed as '{0}'".format(user.username))
-        flash("Login failed", 'error')
+        app.logger.info("Login failed as '{}'".format(user.username))
+        flash(__("Login failed"), 'error')
     return render_template('users/login.html', form=form)
 
 @oauth_twitter.tokengetter
@@ -74,11 +75,11 @@ def oauth_authorized(response):
     next_url = request.args.get('next') or url_for('home')
     next_url = url_for('users.me')
     if response is None:
-        flash("Request to sign in was denied")
+        flash(__("Request to sign in was denied"))
         return redirect(next_url)
     session['twitter_token'] = (response['oauth_token'], response['oauth_token_secret'])
     session['twitter_user'] = response['screen_name']
-    flash("You were signed in as {}".format(response['screen_name']))
+    flash(__("You were signed in as {}").format(response['screen_name']))
     return redirect(next_url)
 
 @module.route('/logout')
@@ -89,23 +90,23 @@ def logout():
     return redirect(request.referrer)
 
 @module.route('/register', methods=['GET', 'POST'])
-@crumbs(odict((('home', 'Home'), ('.register', 'Sign up'))))
+@crumbs(odict((('home', __("Home")), ('.register', __("Sign up")))))
 def register():
     form = RegistrationForm(request.form)
     if request.method == 'POST':
         if form.validate_on_submit():
             user = controller.register_user(form.username.data, form.email.data, form.password.data, form.accept_tos.data)
             if user is not None:
-                flash("Thanks for registering, {0}! Check your email to complete registration.".format(user.username), 'success')
+                flash(__("Thanks for registering, {}! Check your email to complete registration.").format(user.username), 'success')
                 return redirect(url_for('home'))
-            flash("Failed to register", 'error')
+            flash(__("Failed to register"), 'error')
     return render_template('users/register.html', form=form)
 
 @module.route('/validate/<email>/<token>', methods=['GET'])
 def validate(email, token):
     user = User.query.filter_by(email=email).first()
     if controller.validate_user(user, token):
-        flash("You have been validated, {}".user.username, 'success')
+        flash(__("You have been validated, {}").user.username, 'success')
     else:
-        flash("I wasn't able to validate you", 'error')
+        flash(__("I wasn't able to validate you"), 'error')
     return redirect(url_for('home'))

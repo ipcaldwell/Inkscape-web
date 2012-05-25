@@ -4,6 +4,7 @@ import os
 from collections import OrderedDict as odict
 
 from flask import escape, flash, Flask, g, redirect, render_template, request, send_from_directory, session, url_for
+from flaskext.babel import lazy_gettext as __
 
 from app import app
 from app import controller as c
@@ -20,7 +21,7 @@ def home():
         logged_in = True
         username = session['username']
     if logged_in:
-        app.logger.debug("Logged in as {0}".format(username))
+        app.logger.debug("Logged in as {}".format(username))
     else:
         app.logger.debug("Not logged in")
     return render_template('frontpage.html', languages=app.config['LANGUAGES'])
@@ -41,6 +42,8 @@ def error_page_not_found(error):
 def error_internal_server_error(error):
     return render_template('500-internal-server-error.html'), 500
 
+# TODO: Investigate
+# http://googlewebmastercentral.blogspot.com/2012/05/multilingual-and-multinational-site.html
 @app.route('/sitemap.xml')
 def sitemap():
     url_root = request.url_root[:-1]
@@ -64,37 +67,40 @@ def register():
     return redirect(url_for('users.register'))
 
 @app.route('/about/')
-@crumbs(odict((('home', 'Home'), ('about', 'About'))))
+@crumbs(odict((('home', __("Home")), ('about', __("About")))))
 def about():
     app.logger.debug("Entered /about")
     return render_template('about/overview.html')
 
 @app.route('/about/features/')
-@crumbs(odict((('home', 'Home'), ('about', 'About'), ('features', 'Features'))))
+@crumbs(odict((('home', __("Home")), ('about', __("About")), ('features', __("Features")))))
 def features():
     app.logger.debug("Entered /about/features")
     return render_template('about/features.html')
 
+@app.route('/screenshots/')
 @app.route('/screenshots/<version>')
-@crumbs(odict((('home', 'Home'), ('about', 'About'), ('screenshots', 'Screenshots'))))
-def screenshots():
+@crumbs(odict((('home', __("Home")), ('about', __("About")), ('screenshots', __("Screenshots")))))
+def screenshots(version=None):
+    if version == None:
+        version = '0.48.2'
     app.logger.debug("Entered /about/screenshots")
-    return render_template('about/screenshots.html')
+    return render_template('about/screenshots.html', version=version)
 
 @app.route('/gallery/')
-@crumbs(odict((('home', 'Home'), ('about', 'About'), ('gallery', 'Gallery'))))
+@crumbs(odict((('home', __("Home")), ('about', __("About")), ('gallery', __("Gallery")))))
 def gallery():
     app.logger.debug("Entered /about/gallery")
     return render_template('about/gallery.html')
 
 @app.route('/faq/')
-@crumbs(odict((('home', 'Home'), ('about', 'About'), ('faq', 'FAQ'))))
+@crumbs(odict((('home', ("Home")), ('about', __("About")), ('faq', __("FAQ")))))
 def faq():
     app.logger.debug("Entered /about/faq")
     return render_template('about/faq.html')
 
 @app.route('/testimonials/')
-@crumbs(odict((('home', 'Home'), ('about', 'About'), ('testimonials', 'User testimonials'))))
+@crumbs(odict((('home', __("Home")), ('about', __("About")), ('testimonials', __("User testimonials")))))
 def testimonials():
     app.logger.debug("Entered /about/testimonials")
     return render_template('about/testimonials.html')
@@ -105,13 +111,13 @@ def search():
     #query = request.args.get('q', '')
     if query is None:
         app.logger.debug("Empty search query")
-        flash("No search terms were specified", 'error')
+        flash(__("No search terms were specified"), 'error')
         if request.referrer:
             return redirect(request.referrer)
         else:
             return redirect(url_for('index'))
     else:
         query = query.strip()
-        app.logger.debug("Searching for '{0}'".format(query))
-        flash("Search results for '{0}'".format(query), 'success')
-        #return 'Search results for <strong>{0}</strong>'.format(query)
+        app.logger.debug("Searching for '{}'".format(query))
+        flash(__("Search results for '{}'").format(query), 'success')
+        #return 'Search results for <strong>{}</strong>'.format(query)

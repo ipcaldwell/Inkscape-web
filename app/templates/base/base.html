@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
-        <title>{% block title %}Inkscape: Draw Freely.{% endblock title %}</title>
+        <title>{% block title %}{{ _("Inkscape: Draw Freely.") }}{% endblock title %}</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         {% block head %}
         {% endblock head %}
@@ -20,7 +20,7 @@
         <div class="footer">
             {% include "base/footer.html" %}
         </div>
-        <p id="final-footer">Website designed by <a href="http://skymaiden.com/">Hinerangi Courtenay</a> in Inkscape and developed by <a href="http://chrismorgan.info/">Chris Morgan</a> and <a href="http://jeffkayser.com/">Jeff Kayser</a></p>
+        <p id="final-footer">{{ _("Website designed by <a href=\"http://skymaiden.com/\">Hinerangi Courtenay</a> in Inkscape and developed by <a href=\"http://jeffkayser.com/\">Jeff Kayser</a>") }}</p>
     </body>
 </html>
 

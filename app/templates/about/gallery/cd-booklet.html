@@ -1,36 +1,36 @@
 {% extends "base_about.html" %}
-{% block title %}Gallery: CD Booklet{% endblock %}
-{% block pagetitle %}CD booklet{% endblock %}
+{% block title %}{{ _("Gallery: CD Booklet") }}{% endblock %}
+{% block pagetitle %}{{ _("CD booklet") }}{% endblock %}
 {% block body-classes %}page-gallery{% endblock %}
 {% block left-column %}
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_FZ_booklet.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_FZ_booklet_thumb.png" alt=""></a>
-	<h2>CD booklet</h2>
-	<p>Inkscape helped me create the front and rear pages for the booklet of the Fantomized.info community compilation CD. This is the rear/front pages of a A5 booklet. There was nothing tricky with it - we printed A4 page and then wrapped it in the middle so we got a A5 booklet.</p>
+    <a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_FZ_booklet.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_FZ_booklet_thumb.png" alt="{{ _("") }}"></a>
+    <h2>{{ _("CD booklet") }}</h2>
+    <p>{{ _("Inkscape helped me create the front and rear pages for the booklet of the Fantomized.info community compilation CD. This is the rear/front pages of a A5 booklet. There was nothing tricky with it - we printed A4 page and then wrapped it in the middle so we got a A5 booklet.") }}</p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_kword.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_kword_thumb.png" alt=""></a>
-	<h2>Book diagrams</h2>
-	<p>I'm writing a book on sound design and synthesizer programming, and it requires lots of sound structure drawings and other sorts of graphics. Currently, my book has over 40 separate images, and all of them were created with Inkscape. Thanks to it's simplicity and intuitiveness, drawing these graphics is a real pleasure. I never thought someday I'll be able to create such nice graphics this easily. Amazing!</p>
+    <a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_kword.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_kword_thumb.png" alt="{{ _("") }}"></a>
+    <h2>{{ _("Book diagrams") }}</h2>
+    <p>{{ _("I'm writing a book on sound design and synthesizer programming, and it requires lots of sound structure drawings and other sorts of graphics. Currently, my book has over 40 separate images, and all of them were created with Inkscape. Thanks to it's simplicity and intuitiveness, drawing these graphics is a real pleasure. I never thought someday I'll be able to create such nice graphics this easily. Amazing!") }}</p>
 </div>
 
-<h2>Logos</h2>
-<p>The main thing I love about Inkscape is that besides being a really feature-rich editor, it is also very simple and converient to use&mdash;and, most importantly, it inspired me to draw. These logos were created in minutes&mdash;and all thanks to Inkscape's intuitive interface and invaluable tools.</p>
+<h2>{{ _("Logos") }}</h2>
+<p>{{ _("The main thing I love about Inkscape is that besides being a really feature-rich editor, it is also very simple and converient to use&mdash;and, most importantly, it inspired me to draw. These logos were created in minutes&mdash;and all thanks to Inkscape's intuitive interface and invaluable tools.") }}</p>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_beatskitchen.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_beatskitchen_thumb.png" alt="Artemio's Beats Kitchen"></a>
+    <a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_beatskitchen.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_beatskitchen_thumb.png" alt="{{ _("Artemio's Beats Kitchen") }}"></a>
 	<p></p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_fantom_s.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_fantom_s_thumb.png" alt="Artemio's Fantom-S web site"></a>
+    <a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_fantom_s.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_fantom_s_thumb.png" alt="{{ _("Artemio's Fantom-S web site") }}"></a>
 	<p></p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_linuxdoc.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_linuxdoc_thumb.png" alt="Artemio's Linux docs"></a>
+    <a href="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_linuxdoc.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/artemio_inkscape_logo_linuxdoc_thumb.png" alt="{{ _("Artemio's Linux docs") }}"></a>
 	<p></p>
 </div>
 {% endblock %}

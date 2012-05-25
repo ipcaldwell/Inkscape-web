@@ -62,13 +62,13 @@ def prevalidate_user(user):
     db.session.commit()
     mail_user(
             user,
-            "[Inkscape.org] Complete Your Registration",
-            """Please complete your registration by clicking the link below.
+            _("[Inkscape.org] Complete Your Registration"),
+            _("""Please complete your registration by clicking the link below.
 
             http://inkscape.org/user/validate/{}/{}
 
             Thank you,
-            The Inkscape Web Team""".format(user.email, token),
+            The Inkscape Web Team""").format(user.email, token),
             )
 
 def validate_user(user, given_token):

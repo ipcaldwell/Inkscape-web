@@ -1,9 +1,9 @@
 {% extends "about/about-base.html" %}
 
-{% block title %}Inkscape Login{% endblock %}
+{% block title %}{{ _("Inkscape Login") }}{% endblock %}
 {% block pageid %}page-user-login{% endblock %}
-{% block pagetitle %}Login{% endblock %}
-{% block breadcrumbs %}<a href="/">Home</a> &gt; <a>Login</a>{% endblock %}
+{% block pagetitle %}{{ _("Login") }}{% endblock %}
+{% block breadcrumbs %}<a href="/">{{ _("Home") }}</a> &gt; <a>{{ _("Login") }}</a>{% endblock %}
 {% block content_classes %}with-short-right-sidebar{% endblock %}
 
 {% block head %}
@@ -33,7 +33,7 @@
             <ul>
                 {{ render_field(form.username, maxlength=254, autofocus='autofocus', required='required', max=254) }}
                 {{ render_field(form.password, maxlength=1000, required='required') }}
-                <li><input type="submit" value="Login"</li>
+                <li><input type="submit" value="{{ _("Login") }}"</li>
             </ul>
         {{ form.hidden_tag() }}
         </fieldset>

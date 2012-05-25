@@ -24,49 +24,49 @@
         <div id="front-banner-overview" class="front-banner current top right buttons-right one-day-in-farm">
         <!--<div id="front-banner-overview" class="front-banner current top right buttons-right light grass">-->
             <div>
-                <p>Inkscape is a professional quality open-source vector graphics editor, which runs on Windows, Mac OS X and Linux. And it's free!</p>
+                <p>{{ _("Inkscape is a professional quality open-source vector graphics editor, which runs on Windows, Mac OS X and Linux. And it's free!") }}</p>
                 <div>
-                    <a id="front-banner-read-more" href="/about" class="button center w140 darkbg">Read more</a>
+                    <a id="front-banner-read-more" href="/about" class="button center w140 darkbg">{{ _("Read more") }}</a>
                     <div id="front-banner-download-box">
-                        <a href="/download" class="button w140 center darkbg download"><span>Download</span></a>
+                        <a href="/download" class="button w140 center darkbg download"><span>{{ _("Download") }}</span></a>
 
-                        <span>Latest stable release: 0.48.2</span>
+                        <span>{{ _("Latest stable release: ") }}{% include "VERSION" %}</span>
                     </div>
                 </div>
             </div>
             <!--<p id="front-banner-author" class="black right"><a rel="author" href="http://freeter.deviantart.com/art/Grass-inkscape-86884997"><em>Grass</em> by freeter</a></p>-->
-            <p id="front-banner-author"><a rel="author" href="http://rebirthart.deviantart.com/art/One-Day-in-Farm-47515219"><em>One Day in Farm</em> by RebirthArt</a></p>
+            <p id="front-banner-author">{{ _("<a rel=\"author\" href=\"http://rebirthart.deviantart.com/art/One-Day-in-Farm-47515219\"><em>One Day in Farm</em> by RebirthArt") }}</a></p>
         </div>
         <div id="front-banner-features" class="front-banner">
             <div>
-                <p>Inkscape is just so <em>absolutely jam packed full of features</em> we can't tell you about them all here. In fact, there are so many features that it's not even worth starting on this page.</p>
-                <p><a href="/about/features/" class="button center">Learn about all the marvellous things Inkscape has to offer</a></p>
+                <p>{{ _("Inkscape is just so <em>absolutely jam packed full of features</em> we can't tell you about them all here. In fact, there are so many features that it's not even worth starting on this page.") }}</p>
+                <p><a href="/about/features/" class="button center">{{ _("Learn about all the marvellous things Inkscape has to offer") }}</a></p>
             </div>
         </div>
         <div id="front-banner-gallery" class="front-banner">
             <div>
-                <p>Whoa. You've already seen those pictures on the other tabs &ndash; what more do you want to see?</p>
+                <p>{{ _("Whoa. You've already seen those pictures on the other tabs &ndash; what more do you want to see?") }}</p>
             </div>
         </div>
         <div id="front-banner-learning" class="front-banner">
             <div>
-                <p>One day we might consider helping you out here. But unfortunately for you, today is Not Your Lucky Day.</p>
+                <p>{{ _("One day we might consider helping you out here. But unfortunately for you, today is Not Your Lucky Day.") }}</p>
             </div>
         </div>
     </div>
     <ul id="front-banner-tabs">
         <li id="front-banner-tab-overview">
-            <a href="#front-banner-overview" class="current" onclick="return frontTabGo(this);"><strong>Overview</strong><span></span> What is Inkscape and how can you get it?</a>
+        <a href="#front-banner-overview" class="current" onclick="return frontTabGo(this);"><strong>{{ _("Overview") }}</strong><span></span> {{ _("What is Inkscape and how can you get it?") }}</a>
         </li>
         <li id="front-banner-tab-features">
-            <a href="#front-banner-features" onclick="return frontTabGo(this);"><strong>Features</strong><span></span> Find out what Inkscape is capable of.</a>
+        <a href="#front-banner-features" onclick="return frontTabGo(this);"><strong>{{ _("Features") }}</strong><span></span> {{ _("Find out what Inkscape is capable of.") }}</a>
         </li>
         <li id="front-banner-tab-gallery">
-            <a href="#front-banner-gallery" onclick="return frontTabGo(this);"><strong>Gallery</strong><span></span> Showcase of creations from the Inkscape community.</a>
+        <a href="#front-banner-gallery" onclick="return frontTabGo(this);"><strong>{{ _("Gallery") }}</strong><span></span> {{ _("Showcase of creations from the Inkscape community.") }}</a>
         </li>
         <li id="front-banner-tab-learning">
-        <a href="#front-banner-learning" onclick="return frontTabGo(this);"><strong>Learning Resources</strong><span></span>
-Resources to help you get the most out of Inkscape.</a>
+        <a href="#front-banner-learning" onclick="return frontTabGo(this);"><strong>{{ _("Learning Resources") }}</strong><span></span>
+            {{ _("Resources to help you get the most out of Inkscape.") }}</a>
         </li>
     </ul>
 </div>
@@ -74,41 +74,41 @@ Resources to help you get the most out of Inkscape.</a>
 
 {% block content %}
 <div class="column1">
-    <h1><a href="/about/">Users</a></h1>
-    <h2>A powerful, free design tool</h2>
-    <p>Whether you are an illustrator, designer, web designer or just someone who needs to create some vector imagery, Inkscape is for you!</p>
+    <h1><a href="/about/">{{ _("Users") }}</a></h1>
+    <h2>{{ _("A powerful, free design tool") }}</h2>
+    <p>{{ _("Whether you are an illustrator, designer, web designer or just someone who needs to create some vector imagery, Inkscape is for you!") }}</p>
     <ul class="ticks">
-        <li>flexible <a href="">drawing tools</a></li>
-        <li>large file format compatibility</li>
-        <li>powerful <a href="">text tool</a></li>
-        <li><a href="">bezier</a> and <a href="">spiro</a> curves</li>
+        <li>{{ _("flexible <a href=\"\">drawing tools</a>") }}</li>
+        <li>{{ _("large file format compatibility") }}</li>
+        <li>{{ _("powerful <a href=\"\">text tool</a>") }}</li>
+        <li>{{ _("<a href=\"\">bezier</a> and <a href=\"\">spiro</a> curves") }}</li>
     </ul>
-    <p>Want to find out more about how Inkscape can help you? Look at a full set of <a href="/about/features/">features</a> or <a href="/download/">try it out</a>!</p>
+    <p>{{ _("Want to find out more about how Inkscape can help you? Look at a full set of <a href=\"/about/features/\">features</a> or <a href=\"/download/\">try it out</a>!") }}</p>
 </div>
 <div class="column2">
-    <h1><a href="/developers/">Developers</a></h1>
-    <h2>Join our thriving community</h2>
-    <p>We can always use help from more people. If you can write code, you may be able to <a href="">help with development</a>; if you can't, there are still lots of things we can use help with:</p>
+    <h1><a href="/developers/">{{ _("Developers") }}</a></h1>
+    <h2>{{ _("Join our thriving community") }}</h2>
+    <p>{{ _("We can always use help from more people. If you can write code, you may be able to <a href=\"\">help with development</a> if you can't, there are still lots of things we can use help with:") }}</p>
     <ul>
-        <li><a href="">request a feature</a> you'd like</li>
-        <li>if you find bugs, <a href="">report them</a></li>
-        <li>improve <a href="">documentation</a></li>
+        <li>{{ _("<a href=\"\">request a feature</a> you'd like") }}</li>
+        <li>{{ _("if you find bugs, <a href=\"\">report them") }}</a></li>
+        <li>{{ _("improve <a href=\"\">documentation") }}</a></li>
     </ul>
-    <p>For more information, take a look at our <a href="/developers/">developers</a> section.</p>
+    <p>{{ _("For more information, take a look at our <a href=\"/developers/\">developers</a> section.") }}</p>
 </div>
 <div class="column3">
-    <h1><a href="/news">Recent News</a></h1>
+    <h1><a href="/news">{{ _("Recent News") }}</a></h1>
     <div class="article">
-        <h2><a href="/news/inkscape-0.48-essentials-for-web-designers">Inkscape 0.48 Essentials for Web Designers</a></h2>
-        <p class="postdate">November 10, 2010</p>
-        <p>Packt Publishing have just released a new book on Inkscape by Bethany Hiitola called "Inkscape 0.48 Essentials for Web Designers". Surprisingly this book is the first to cover features of our August release and definitely first to focus exclusively on web design.</p>
-        <p class="readmore"><a href="/news/inkscape-0.48-essentials-for-web-designers">Read more...</a></p>
+        <h2><a href="/news/inkscape-0.48-essentials-for-web-designers">{{ _("Inkscape 0.48 Essentials for Web Designers") }}</a></h2>
+        <p class="postdate">{{ _("November 10, 2010") }}</p>
+        <p>{{ _("Packt Publishing have just released a new book on Inkscape by Bethany Hiitola called &quot;Inkscape 0.48 Essentials for Web Designers&quot;. Surprisingly this book is the first to cover features of our August release and definitely first to focus exclusively on web design.") }}</p>
+        <p class="readmore"><a href="/news/inkscape-0.48-essentials-for-web-designers">{{ _("Read more...") }}</a></p>
     </div>
     <div class="article">
-        <h2><a href="/news/0.48.1-is-delayed">0.48.1 is delayed</a></h2>
-        <p class="postdate">November 5, 2010</p>
-        <p>As you probably have already noticed, release of the first planned point release is delayed. The reason behind this is that we discovered a number of regressions over 0.47 and a number of bugs in new functionality, so we had to take some extra time fixing them.</p>
-        <p class="readmore"><a href="/news/0.48.1-is-delayed">Read more...</a></p>
+        <h2><a href="/news/0.48.1-is-delayed">{{ _("0.48.1 is delayed") }}</a></h2>
+        <p class="postdate">{{ _("November 5, 2010") }}</p>
+        <p>{{ _("As you probably have already noticed, release of the first planned point release is delayed. The reason behind this is that we discovered a number of regressions over 0.47 and a number of bugs in new functionality, so we had to take some extra time fixing them.") }}</p>
+        <p class="readmore"><a href="/news/0.48.1-is-delayed">{{ _("Read more...") }}</a></p>
     </div>
 </div>
 <br>

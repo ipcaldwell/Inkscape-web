@@ -1,118 +1,118 @@
 {% extends "about/about-base.html" %}
 
-{% block title %}Inkscape Features{% endblock title %}
+{% block title %}{{ _("Inkscape Features") }}{% endblock title %}
 {% block pageid %}page-about-features{% endblock pageid %}
-{% block pagetitle %}Inkscape Features{% endblock %}
+{% block pagetitle %}{{ _("Inkscape Features") }}{% endblock %}
 {#
 {% block content_classes %}with-short-right-sidebar{% endblock content_classes %}
 #}
 
 {% block main %}
-<p class="summary">Inkscape is a professional quality vector graphics software with sophisticated drawing and manipulation tools. It has a comprehensive feature set that is used by professionals and hobbyists around the world.</p>
-<h2>Notable Features</h2>
+<p class="summary">{{ _("Inkscape is a professional quality vector graphics software with sophisticated drawing and manipulation tools. It has a comprehensive feature set that is used by professionals and hobbyists around the world.") }}</p>
+<h2>{{ _("Notable Features") }}</h2>
 <div id="notable-features-container">
 	<div>
 		<img src="http://placehold.it/140x89/4d4d4d/4d4d4d">
-		<h3>Drawing tools</h3>
-		<p>At the heart of Inkscape are sophisticated drawing tools that allow freehand drawing or bezier curves.</p>
+        <h3>{{ _("Drawing tools") }}</h3>
+        <p>{{ _("At the heart of Inkscape are sophisticated drawing tools that allow freehand drawing or bezier curves.") }}</p>
 	</div>
 	<div>
 		<img src="http://placehold.it/140x89/4d4d4d/4d4d4d">
-		<h3>Node points</h3>
-		<p>Inkscape's node tool enables precision editing of multiple paths at once.</p>
+        <h3>{{ _("Node points") }}</h3>
+        <p>{{ _("Inkscape's node tool enables precision editing of multiple paths at once.") }}</p>
 	</div>
 	<div>
 		<img src="http://placehold.it/140x89/4d4d4d/4d4d4d">
-		<h3>Text tool</h3>
-		<p>Inkscape has on-canvas text editing with precise control over typography.</p>
+        <h3>{{ _("Text tool") }}</h3>
+        <p>{{ _("Inkscape has on-canvas text editing with precise control over typography.") }}</p>
 	</div>
 	<div class="last">
 		<img src="http://placehold.it/140x89/4d4d4d/4d4d4d">
-		<h3>XML editor</h3>
-		<p>Directly manipulate underlying SVG code to ensure complete W3C compliancy.</p>
+        <h3>{{ _("XML editor") }}</h3>
+        <p>{{ _("Directly manipulate underlying SVG code to ensure complete W3C compliancy.") }}</p>
 	</div>
 </div>
 <div id="more-things-container">
 	<div>
-		<h2>Creation</h2>
+        <h2>{{ _("Creation") }}</h2>
 
-		<h3>Shape tools</h3>
-		<p>Give quick expression to your creativity with ready to use rectangles, arcs, stars and polygons. </p>
+        <h3>{{ _("Shape tools") }}</h3>
+        <p>{{ _("Give quick expression to your creativity with ready to use rectangles, arcs, stars and polygons.") }}</p>
 
-		<h3>3D boxes</h3>
-		<p>Create cubes controlling vanishing points.</p>
+        <h3>{{ _("3D boxes") }}</h3>
+        <p>{{ _("Create cubes controlling vanishing points.") }}</p>
 
-		<h3>Gradients</h3>
-		<p>Inkscape allows easy onscreen editing of complex gradients.</p>
+        <h3>{{ _("Gradients") }}</h3>
+        <p>{{ _("Inkscape allows easy onscreen editing of complex gradients.") }}</p>
 
-		<h3>Clones</h3>
-		<p>Inkscape clones are "live" linked copies of objects that change with the original, but can also be transformed independently.</p>
+        <h3>{{ _("Clones") }}</h3>
+        <p>{{ _("Inkscape clones are &quot;live&quot; linked copies of objects that change with the original, but can also be transformed independently.") }}</p>
 
-		<h3>Bitmaps</h3>
-		<p>Import raster graphics by either linking or embedding them, and perform basic editing. You can also create bitmaps of selected objects.</p>
+        <h3>{{ _("Bitmaps") }}</h3>
+        <p>{{ _("Import raster graphics by either linking or embedding them, and perform basic editing. You can also create bitmaps of selected objects.") }}</p>
 
-		<h3>Connectors</h3>
-		<p>Creating organization charts or flow diagrams is easy with Inkscape's connector tool.</p>
+        <h3>{{ _("Connectors") }}</h3>
+        <p>{{ _("Creating organization charts or flow diagrams is easy with Inkscape's connector tool.") }}</p>
 	</div>
 	<div>
-		<h2>Manipulation</h2>
+        <h2>{{ _("Manipulation") }}</h2>
 
-		<h3>Transformations</h3>
-		<p>Inkscape supports a number of object transformations, such as scale, rotate and skew.</p>
+        <h3>{{ _("Transformations") }}</h3>
+        <p>{{ _("Inkscape supports a number of object transformations, such as scale, rotate and skew.") }}</p>
 		
-		<h3>Tweak tool</h3>
-		<p>Alter objects shape and style with a sweep of your mouse.</p>
+        <h3>{{ _("Tweak tool") }}</h3>
+        <p>{{ _("Alter objects shape and style with a sweep of your mouse.") }}</p>
 
-		<h3>Path effects</h3>
-		<p>Non-destructive effects helps you manipulate your objects in creative ways.</p>
+        <h3>{{ _("Path effects") }}</h3>
+        <p>{{ _("Non-destructive effects helps you manipulate your objects in creative ways.") }}</p>
 		
-		<h3>Styling</h3>
-		<p>Inkscape has intuitive fill and stroke dialogs that control fill and stroke colour, and stroke styles. The colour palette bar allows quick changes.</p>
+        <h3>{{ _("Styling") }}</h3>
+        <p>{{ _("Inkscape has intuitive fill and stroke dialogs that control fill and stroke colour, and stroke styles. The colour palette bar allows quick changes.") }}</p>
 
-		<h3>Clips &amp; masks</h3>
-		<p>Selectively hide parts of your objects without having to cut them.</p>
+        <h3>{{ _("Clips &amp; masks") }}</h3>
+        <p>{{ _("Selectively hide parts of your objects without having to cut them.") }}</p>
 
-		<h3>Layers</h3>
-		<p>Organise elements into a logical structure. You can lock, hide or adjust opacity and blending mode of individual layers.</p>
+        <h3>{{ _("Layers") }}</h3>
+        <p>{{ _("Organise elements into a logical structure. You can lock, hide or adjust opacity and blending mode of individual layers.") }}</p>
 
-		<h3>Positioning</h3>
-		<p>Positioning objects in Inkscape is simple with the selector tool, the align &amp; distribute dialog, and z-order operations.</p>
+        <h3>{{ _("Positioning") }}</h3>
+        <p>{{ _("Positioning objects in Inkscape is simple with the selector tool, the align &amp; distribute dialog, and z-order operations.") }}</p>
 
-		<h3>Object grouping</h3>
-		<p>Inkscape lets you group related objects for easier manipulation.</p>
+        <h3>{{ _("Object grouping") }}</h3>
+        <p>{{ _("Inkscape lets you group related objects for easier manipulation.") }}</p>
 	</div>
 	<div class="last">
-		<h2>More stuff</h2>
+        <h2>{{ _("More stuff") }}</h2>
 		
-		<h3>Spiro splines</h3>
-		<p>With this kind of curves creating smooth round paths is a piece of cake.</p>
+        <h3>{{ _("Spiro splines") }}</h3>
+        <p>{{ _("With this kind of curves creating smooth round paths is a piece of cake.") }}</p>
 
-		<h3>Grids</h3>
-		<p>Create as many rectangular and axonometric grids as you need. Versatile settings lets you fine tune colour, spacing, angle and more.</p>
+        <h3>{{ _("Grids") }}</h3>
+        <p>{{ _("Create as many rectangular and axonometric grids as you need. Versatile settings lets you fine tune colour, spacing, angle and more.") }}</p>
 
-		<h3>Guides</h3>
-		<p>Create ortogonal and angled guides or move and rotate any guide on canvas.</p>
+        <h3>{{ _("Guides") }}</h3>
+        <p>{{ _("Create ortogonal and angled guides or move and rotate any guide on canvas.") }}</p>
 
-		<h3>Snapping</h3>
-		<p>Powerful snapping of objects, paths and gradients. Snap everything to everything with the finest control and contextual visual aids. </p>
+        <h3>{{ _("Snapping") }}</h3>
+        <p>{{ _("Powerful snapping of objects, paths and gradients. Snap everything to everything with the finest control and contextual visual aids.") }}</p>
 
-		<h3>Swatches (Auto palette)</h3>
-		<p>Create colours and reuse them everywhere for easier styling of your objects.</p>
+        <h3>{{ _("Swatches (Auto palette)") }}</h3>
+        <p>{{ _("Create colours and reuse them everywhere for easier styling of your objects.") }}</p>
 
-		<h3>Filters</h3>
-		<p>Enhance your art with a wide selection of visual effects, all SVG compliant.</p>
+        <h3>{{ _("Filters") }}</h3>
+        <p>{{ _("Enhance your art with a wide selection of visual effects, all SVG compliant.") }}</p>
 		
-		<h3>Extensions</h3>
-		<p>Python-powered scripts lets you go beyond base editing tools capabilities.</p>
+        <h3>{{ _("Extensions") }}</h3>
+        <p>{{ _("Python-powered scripts lets you go beyond base editing tools capabilities.") }}</p>
 		
-		<h3>Color management</h3>
-		<p>Inkscape uses industry renown <a href="http://www.littlecms.com/">littleCMS</a> for calibrated colours, display profiling and basic print simulation.</p>
+        <h3>{{ _("Color management") }}</h3>
+        <p>{{ _("Inkscape uses industry renown <a href=\"http://www.littlecms.com/\">littleCMS</a> for calibrated colours, display profiling and basic print simulation.") }}</p>
 
-		<h3>Excelent interoperability</h3>
-		<p>Open and save to multiple graphic formats. <a href="http://sk1project.org/modules.php?name=Products&product=uniconvertor">UniConvertor</a> provides compatibility for some of these formats.</p>
+        <h3>{{ _("Excelent interoperability") }}</h3>
+        <p>{{ _("Open and save to multiple graphic formats. <a href=\"http://sk1project.org/modules.php?name=Products&product=uniconvertor\">UniConvertor</a> provides compatibility for some of these formats.") }}</p>
 		
-		<h3>Free!</h3>
-		<p>Inkscape cost no money and it's <a href="http://www.opensource.org/">open source</a> software released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPL2 license</a>.</p>
+        <h3>{{ _("Free!") }}</h3>
+        <p>{{ _("Inkscape cost no money and it's <a href=\"http://www.opensource.org/\">open source</a> software released under the <a href=\"http://www.gnu.org/licenses/gpl-2.0.html\">GPL2 license</a>.") }}</p>
 
 	</div>
 </div>

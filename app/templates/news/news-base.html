@@ -1,0 +1,36 @@
+{% extends "base/base-2-columns2.html" %}
+
+{% block title %}{{ _("Inkscape News") }}{% endblock %}
+{% block pageid %}page-news-archive{% endblock %}
+{% block pagetitle %}{{ _("Inkscape News") }}{% endblock %}
+{% block content_classes %}with-short-right-sidebar{% endblock %}
+
+{% block head %}
+<script type="text/javascript">
+    $(document).ready(function() { $('.topnav-news > a').addClass('current'); });
+</script>
+{% endblock %}
+
+{% block main %}
+{{ _("Language is now:") }} {{ g.language_code }}
+{{ _('test') }}
+{% endblock main %}
+
+{% block sidebar %}
+    <ul class="article-actions">
+        <li><a class="action-subscribe" href="{{ url_for('news.rss') }}">{{ _("Subscribe via RSS") }}</a></li>
+    </ul>
+
+    <h2>{{ _("Categories") }}</h2>
+    {% if g.categories %}
+    <ul>
+        {% for category in g.categories %}
+        <li><a href="/news/category/in-press/">{{ category.name }}</a> (8)</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <strong>{{ _("No categories defined") }}</strong>
+    {% endif %}
+
+    <h2>{{ _("News Archives") }}</h2>
+{% endblock sidebar %}

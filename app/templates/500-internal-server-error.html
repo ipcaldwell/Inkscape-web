@@ -1,9 +1,8 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block alltitle %}You broke it!{% endblock %}
-{% block logo-url %}{{ MEDIA_URL }}images/linked-image-not-found.png{% endblock %}
-{% block body-pageid %}500{% endblock %}
+{% extends "base/base.html" %}
+{% block title %}{{ _("You broke it!") }} | {{ _("Inkscape") }}{% endblock %}
+{{ url_for('static', filename='images/linked-image-not-found.png') }}
+{% block pageid %}500{% endblock %}
 {% block content %}
-<h1>Ouch!</h1>
-<p>You broke our website! Please email <a href="mailto:me@chrismorgan.info?title=I+broke+the+Inkscape+website">Chris Morgan (me@chrismorgan.info)</a> and we'll see about fixing it.</p>
+<h1>{{ _("Ouch!") }}</h1>
+<p>{{ _("You broke our website! Please <a href=\"mailto:webmaster@inkscape.org?title=Inkscape+Website+Problem\">email us</a>, and we'll see about fixing it.") }}</p>
 {% endblock %}

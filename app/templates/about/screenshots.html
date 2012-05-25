@@ -1,8 +1,8 @@
 {% extends "about/about-base.html" %}
 
 {% block pageid %}page-screenshots{% endblock %}
-{% block title %}Inkscape screenshots{% endblock %}
-{% block pagetitle %}Inkscape screenshots{% endblock %}
+{% block title %}{{ _("Inkscape screenshots") }}{% endblock %}
+{% block pagetitle %}{{ _("Inkscape screenshots") }}{% endblock %}
 
 {% block main %}
     <script>
@@ -16,7 +16,7 @@
         }
         changeScreenshot.current = 1;
     </script>
-    <h2>Screenshots of Inkscape {{ version }}</h2>
+    <h2>{{ _("Screenshots of Inkscape {{ version }}") }}</h2>
 
     <ul id="screenshots-big">
         {% for screenshot in screenshots %}
@@ -34,7 +34,7 @@
         {% endfor %}
     </ul>
 
-    <p>See screenshots of other versions:</p>
+    <p>{{ _("See screenshots of other versions:") }}</p>
     <ul class="pager em">
         {% for v in versions %}{% if v != version %}
         <li><a href="/screenshots/{{ v }}/">{{ v }}</a></li>

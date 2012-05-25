@@ -3,11 +3,15 @@
 from flask import Flask, render_template
 from flask.ext.login import LoginManager
 from flask.ext.sqlalchemy import SQLAlchemy
+from flaskext.babel import Babel
 from flaskext.mail import Mail
 
 # Flask init
 app = Flask(__name__)
 app.config.from_object('config')
+
+# Internationalization
+babel = Babel(app)
 
 # Database init
 db = SQLAlchemy(app)
@@ -31,5 +35,15 @@ app.register_blueprint(user)
 login_manager.login_view = 'users.view'
 #login_manager.login_message = ""
 
+from app.i18n.view import module as i18n
+app.register_blueprint(i18n)
+
+from app.news.view import module as news
+app.register_blueprint(news)
+
 from app import view
+
+# Complete internationalization init
+from app.i18n.helper import initialize_i18n
+initialize_i18n()
 

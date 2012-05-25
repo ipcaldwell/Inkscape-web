@@ -1,9 +1,9 @@
 {% extends "about/about-base.html" %}
 
-{% block title %}Inkscape Sign-up{% endblock %}
+{% block title %}{{ _("Inkscape Sign-up") }}{% endblock %}
 {% block pageid %}page-user-register{% endblock %}
-{% block pagetitle %}Create a new account{% endblock %}
-{% block breadcrumbs %}<a href="/">Home</a> &gt; <a>Sign up</a>{% endblock %}
+{% block pagetitle %}{{ _("Create a new account") }}{% endblock %}
+{% block breadcrumbs %}<a href="/">{{ _("Home") }}</a> &gt; <a>{{ _("Sign up") }}</a>{% endblock %}
 {% block content_classes %}with-short-right-sidebar{% endblock %}
 
 {% block head %}
@@ -30,14 +30,14 @@
 {% from "macros/form_field.html" import render_field %}
     <form action="{{ url_for('.register') }}" method="post">
         <p>
-        <strong>Registering has the following benefits</strong>:
+        {{ _("<strong>Registering has the following benefits:</strong>") }}
         <ul>
-            <li>Share your own art created in Inkscape with others</li>
-            <li>Contribute to the Inkscape wiki</li>
-            <li>Participate in forum discussions about Inkscape</li>
-            <li>... and more!</li>
+            <li>{{ _("Share your own art created in Inkscape with others") }}</li>
+            <li>{{ _("Contribute to the Inkscape wiki") }}</li>
+            <li>{{ _("Participate in forum discussions about Inkscape") }}</li>
+            <li>{{ _("... and more!") }}</li>
         </ul>
-        <strong>We will never send you spam or sell your information.</strong> You may delete your account at any time. Please read our <a href="/privacy.html">privacy policy</a> for details on how we use your information and protect your privacy.
+        {{ _("<strong>We will never send you spam or sell your information.</strong> You may delete your account at any time. Please read our <a href="/privacy.html">privacy policy</a> for details on how we use your information and protect your privacy.") }}
         </p>
         <fieldset>
             <ul>
@@ -47,7 +47,7 @@
                 {{ render_field(form.password, maxlength=1000, required='required') }}
                 {{ render_field(form.password2, maxlength=1000, required='required') }}
                 {{ render_field(form.accept_tos) }}
-                <li><input type="submit" value="Register"</li>
+                <li><input type="submit" value="{{ _("Register") }}"</li>
             </ul>
         {{ form.hidden_tag() }}
         </fieldset>

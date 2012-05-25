@@ -43,6 +43,9 @@ class User(db.Model):
     oauth_token = db.Column(db.String(200))
     oauth_secret = db.Column(db.String(200))
     token = db.relationship('Token', backref=db.backref('users', uselist=False))
+    locale = db.Column(db.String(2), nullable=False, server_default="en")
+    timezone = db.Column(db.String(50), nullable=False, server_default="America/Chicago")
+    dateformat = db.Column(db.String(50), nullable=False, server_default="medium")
 
     def __init__(self, username, password, salt, email, is_tos_accepted):
         self.username = username

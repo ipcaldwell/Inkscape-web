@@ -1,41 +1,41 @@
 {% extends "base_about.html" %}
-{% block title %}Gallery: Branding{% endblock %}
-{% block pagetitle %}Branding{% endblock %}
+{% block title %}{{ _("Gallery: Branding") }}{% endblock %}
+{% block pagetitle %}{{ _("Branding") }}{% endblock %}
 {% block body-classes %}page-gallery{% endblock %}
 {% block left-column %}
-<p>These are examples of using Inkscape when working on branding.</p>
+<p>{{ _("These are examples of using Inkscape when working on branding.") }}</p>
 
-<h2 class="visual-block"><a href="http://susestudio.com/">SuSE Studio</a> branding by Jakub "Jimmac" Steiner</h2>
+<h2 class="visual-block">{{ _("<a href="http://susestudio.com/">SuSE Studio</a> branding by Jakub &quot;Jimmac&quot; Steiner") }}</h2>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_sketch.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_sketch_thumb.png" alt=""></a>
-	<p>This work started from sketches that Jimmac did during Libre Graphics Meeting 2008 in Wrocław.</p>
+    <a href="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_sketch.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_sketch_thumb.png" alt="{{ _("") }}"></a>
+    <p>{{ _("This work started from sketches that Jimmac did during Libre Graphics Meeting 2008 in Wrocław.") }}</p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_inkscape.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_inkscape_thumb.png" alt=""></a>
-	<p>And here comes the vector version.</p>
+    <a href="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_inkscape.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_break_free_inkscape_thumb.png" alt="{{ _("") }}"></a>
+    <p>{{ _("And here comes the vector version.") }}</p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/suse_studio_fun_sketch.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_fun_sketch_thumb.png" alt=""></a>
-	<p>The main character is called Dister, and here another sample of going from a sketch...</p>
+    <a href="{{ MEDIA_URL }}images/gallery/suse_studio_fun_sketch.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_fun_sketch_thumb.png" alt="{{ _("") }}"></a>
+    <p>{{ _("The main character is called Dister, and here another sample of going from a sketch...") }}</p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/suse_studio_fun_inkscape.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_fun_inkscape_thumb.png" alt=""></a>
-	<p>...to a complete vector drawing.</p>
+    <a href="{{ MEDIA_URL }}images/gallery/suse_studio_fun_inkscape.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_fun_inkscape_thumb.png" alt="{{ _("") }}"></a>
+    <p>{{ _("...to a complete vector drawing.") }}</p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/suse_studio_2d_vs_3d.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_2d_vs_3d_thumb.png" alt=""></a>
-	<p>At a later stage of design process Blender was involved, so here is a comparison between 2D drawing in Inkscape and a 3D rendering of Dister.</p>
+    <a href="{{ MEDIA_URL }}images/gallery/suse_studio_2d_vs_3d.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_2d_vs_3d_thumb.png" alt="{{ _("") }}"></a>
+    <p>{{ _("At a later stage of design process Blender was involved, so here is a comparison between 2D drawing in Inkscape and a 3D rendering of Dister.") }}</p>
 </div>
 
 <div class="category">
-	<a href="{{ MEDIA_URL }}images/gallery/suse_studio_storyboard.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_storyboard_thumb.png" alt=""></a>
-	<p>At some point Jimmac created a small comic featuring Dister, but it wasn't used in the final version of the package. Nevertheless, here is what he says about it:</p>
+    <a href="{{ MEDIA_URL }}images/gallery/suse_studio_storyboard.png"><img class="thumbnail" src="{{ MEDIA_URL }}images/gallery/suse_studio_storyboard_thumb.png" alt="{{ _("") }}"></a>
+    <p>{{ _("At some point Jimmac created a small comic featuring Dister, but it wasn't used in the final version of the package. Nevertheless, here is what he says about it:") }}</p>
 
-	<p>"It is very convenient to work with bitmap objects as well as vectors. Comic book artists have the freedom to re-arrange the flow. By converting an image into a pattern, it is possible to easily create masks on the bitmap. The node tool provides nice control mechanism to edit the 'texture' on such objects. Bitmap patterns can be scaled, moved or rotated directly on canvas".</p>
+    <p>{{ _("&quot;It is very convenient to work with bitmap objects as well as vectors. Comic book artists have the freedom to re-arrange the flow. By converting an image into a pattern, it is possible to easily create masks on the bitmap. The node tool provides nice control mechanism to edit the 'texture' on such objects. Bitmap patterns can be scaled, moved or rotated directly on canvas&quot;.") }}</p>
 </div>
 {% endblock %}
