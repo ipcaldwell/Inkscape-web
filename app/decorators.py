@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# TODO: Investigate OrderedDict.popitem(last=True)
 
 from functools import wraps
 
@@ -10,14 +11,14 @@ def crumbs(hierarchy=None, class_link=None, class_current=None):
         def wrapped(*args, **kwargs):
             crumbs = []
             for item in hierarchy.keys()[:-1]:
-                crumbs.append('<a href="{}"{}>{}</a>'.format(
+                crumbs.append(u'<a href="{}"{}>{}</a>'.format(
                     url_for(item),
-                    '' if class_link is None else ' class="{}"'.format(class_link),
-                    hierarchy[item]))
-            crumbs.append('<a{}>{}</a>'.format(
-                '' if class_current is None else ' class="{}"'.format(class_current),
-                hierarchy[hierarchy.keys()[-1]]))
-            g.crumbs = ' &gt; '.join(crumbs)
+                    u'' if class_link is None else u' class="{}"'.format(class_link),
+                    unicode(hierarchy[item])))
+            crumbs.append(u'<a{}>{}</a>'.format(
+                u'' if class_current is None else u' class="{}"'.format(class_current),
+                unicode(hierarchy[hierarchy.keys()[-1]])))
+            g.crumbs = u' &gt; '.join(crumbs)
             return f(*args, **kwargs)
         return wrapped
     return decorator
