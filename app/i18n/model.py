@@ -13,6 +13,7 @@ class Language(db.Model):
     native_name = db.Column(db.Unicode(200), nullable=False)
     is_active = db.Column(db.Boolean, nullable=False, server_default='1')
     is_major = db.Column(db.Boolean, nullable=False, server_default='0')
+    sort = db.Column(db.Integer, nullable=False, server_default='99999')
 
     def init(self, code, name, native_name):
         self.code = code
@@ -23,6 +24,17 @@ class Language(db.Model):
         return '<Language #{}: {} ({}; {})'.format(self.id, self.code, self.name, self.native_name)
 
     """
+    insert into `languages` (code, name, native_name, is_major, sort) values
+    ('en','English','English', 1, 1),
+    ('de','German','Deutsch', 1, 2),
+    ('fr','French','Français', 1, 3),
+    ('it','Italian','Italiano', 1, 4),
+    ('es','Spanish','Español', 1, 5),
+    ('pt','Portuguese','Português', 1, 6),
+    ('cs','Czech','Česky', 1, 7),
+    ('ru','Russian','Русский', 1, 8),
+    ('ja','Japanese','日本語', 1, 9);
+
     'en','English','English'
     'de','German','Deutsch'
     'fr','French','Français'
