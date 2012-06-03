@@ -21,7 +21,7 @@ class Language(db.Model):
         self.native_name = native_name
 
     def __repr__(self):
-        return '<Language #{}: {} ({}; {})'.format(self.id, self.code, self.name, self.native_name)
+        return u'<Language #{}: {} ({}; {})'.format(self.id, self.code, self.name, self.native_name)
 
     """
     insert into `languages` (code, name, native_name, is_major, sort) values
