@@ -6,6 +6,7 @@
         <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
         <title>{% block title %}{{ _("Inkscape: Draw Freely.") }}{% endblock title %}</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='js/sijax/sijax.js') }}"></script>
         {% block head %}
         {% endblock head %}
     </head>

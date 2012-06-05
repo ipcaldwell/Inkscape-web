@@ -5,6 +5,7 @@ from flask.ext.login import LoginManager
 from flask.ext.sqlalchemy import SQLAlchemy
 from flaskext.babel import Babel
 from flaskext.mail import Mail
+from flask.ext.sijax import Sijax
 
 # Flask init
 app = Flask(__name__)
@@ -27,6 +28,9 @@ login_manager.setup_app(app)
 
 # Mail init
 mail = Mail(app)
+
+# AJAX init
+Sijax(app)
 
 # Blueprint init
 from app.users.view import module as user

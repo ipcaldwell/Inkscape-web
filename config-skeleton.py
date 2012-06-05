@@ -58,3 +58,7 @@ MAIL_DEBUG = DEBUG
 MAIL_USERNAME = None
 MAIL_PASSWORD = None
 DEFAULT_MAIL_SENDER = ("Inkscape.org", 'webmaster@inkscape.org')
+
+# AJAX
+SIJAX_STATIC_PATH = os.path.join(_basedir, 'static/js/sijax/')
+SIJAX_JSON_URI = '/static/js/sijax/json2.js'
