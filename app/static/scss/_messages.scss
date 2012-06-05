@@ -1,0 +1,29 @@
+.messages {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .message {
+        width: 70%;
+        padding: 1em !important;
+        border: 1px inset #333;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .message-success {
+        background-color: #afa;
+        color: #030;
+        border-color: #3a3 !important;
+        background-image: -webkit-linear-gradient(bottom, #7c7, #afa);
+    } 
+
+    .message-error {
+        background-color: #faa;
+        color: #300;
+        border-color: #a33 !important;
+        background-image: -webkit-linear-gradient(bottom, #c77, #faa);
+        //background-image: -webkit-linear-gradient(bottom, rgb(200,229,163) 19%, rgb(240,255,196) 60%);
+    } 
+}
