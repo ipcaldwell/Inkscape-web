@@ -11,9 +11,9 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
     <div class="messages">
-        {% for category, message in messages %}
+        {% for message_category, message in messages %}
         <ul>
-            <li class="message message-{{ category }}">{{ message }}</li>
+            <li class="message message-{{ message_category }}">{{ message }}</li>
         </ul>
         {% endfor %}
     </div>
