@@ -1,0 +1,48 @@
+form {
+    fieldset {
+        border: 0px solid #ddd;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        label {
+            display: inline-block;
+            width: 15em;
+            padding: 0.25em;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+
+        input[type=text],
+        form fieldset input[type=email],
+        form fieldset input[type=password] {
+            width: 20em;
+            border: 1px solid #666;
+            height: 1.5em;
+            margin-left: 0.25em;
+            padding-left: 0.25em;
+        }
+    }
+
+    .has_error {
+        border: 1px solid #a00;
+        background-color: #fcc;
+    }
+
+    ul.errors {
+        margin-left: 1em;
+        list-style-type: disc;
+
+        li {
+            color: #700;
+        }
+    }
+}
+
+input:invalid:focus {
+    border: 1px solid #a00;
+    background-color: #fcc;
+}
