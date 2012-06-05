@@ -6,26 +6,6 @@
 {% block breadcrumbs %}<a href="/">{{ _("Home") }}</a> &gt; <a>{{ _("Sign up") }}</a>{% endblock %}
 {% block content_classes %}with-short-right-sidebar{% endblock %}
 
-{% block head %}
-<style type="text/css">
-    /* message related */
-    .messages ul { margin: 0; padding: 0; list-style: none; }
-    .message { border-radius: 4px; width: 70%; }
-    .message-success { padding: 1em !important; background-color: #afa; color: #030; border: 1px inset #3a3 !important; font-weight: bold; background-image: -webkit-linear-gradient(bottom, #7c7, #afa);}
-    .message-error { padding: 1em !important; background-color: #faa; color: #300; border: 1px inset #a33 !important; font-weight: bold; background-image: -webkit-linear-gradient(bottom, #c77, #faa);}
-    /*.message-error { padding: 1em !important; background-color: #faa; color: #700; border: 1px solid #a33 !important; font-weight: bold; background-image: -webkit-linear-gradient(bottom, rgb(200,229,163) 19%, rgb(240,255,196) 60%);}*/
-    /* form related */
-    form fieldset { border: 0px solid #ddd; }
-    form fieldset ul { margin: 0; padding: 0; list-style: none; }
-    form fieldset label { display: inline-block; width: 15em; padding: 0.25em; margin-top: 1em; font-weight: bold; }
-    form .has_error { border: 1px solid #a00; background-color: #fcc; }
-    form ul.errors { margin-left: 1em; list-style-type: disc; }
-    form ul.errors li { color: #700; }
-    form fieldset input[type=text],form fieldset input[type=email],form fieldset input[type=password] { width: 20em; border: 1px solid #666; height: 1.5em; margin-left: 0.25em; padding-left: 0.25em; }
-    input:invalid:focus { border: 1px solid #a00; background-color: #fcc; }
-</style>
-{% endblock %}
-
 {% block main %}
 {% from "macros/form_field.html" import render_field %}
     <form action="{{ url_for('.register') }}" method="post">
