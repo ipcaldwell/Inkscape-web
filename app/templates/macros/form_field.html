@@ -1,11 +1,18 @@
-{% macro render_field(field) -%}
+{% macro render_field(field, show_label=true) -%}
+{% if field.type == "HiddenField" -%}
+    {{ field(**kwargs) }}
+{% else -%}
+    {% if show_label -%}
     <li>
+    {% endif -%}
     {% if field.type == "BooleanField" -%}
         {{ field(**kwargs) }}
         {{ field.label(class="label") }}
     {% else -%}
+        {% if show_label -%}
         {{ field.label(class="label") }}
             <br>
+        {% endif -%}
         {% if field.errors -%}
             {% set css_class = kwargs.pop('class', '') + ' has_error' -%}
             {{ field(class=css_class|trim, **kwargs) }}
@@ -18,5 +25,8 @@
             {{ field(**kwargs) }}
         {% endif -%}
     {% endif -%}
+    {% if show_label -%}
     </li>
-{%- endmacro %}
+    {% endif -%}
+{% endif -%}
+{% endmacro -%}
