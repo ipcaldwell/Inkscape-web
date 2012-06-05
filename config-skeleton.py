@@ -21,6 +21,7 @@ LANGUAGES = (
     {u'code': u'ru', u'name': u'Русский'},
     {u'code': u'ja', u'name': u'日本語'},
     )
+SUPPORTED_LOCALES = [language['code'] for language in LANGUAGES]
 
 # Database
 DB_TYPE = '<ENGINE>'
