@@ -2,10 +2,12 @@
 <html lang="{{ session.language or "en" }}">
     <head>
         <meta charset="utf-8">
-        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css"></link>
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
         <title>{% block title %}{{ _("Inkscape: Draw Freely.") }}{% endblock title %}</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
         <script src="{{ url_for('static', filename='js/sijax/sijax.js') }}"></script>
         {% block head %}
         {% endblock head %}
