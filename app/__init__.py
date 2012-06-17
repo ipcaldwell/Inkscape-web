@@ -17,6 +17,10 @@ babel = Babel(app)
 # Database init
 db = SQLAlchemy(app)
 
+# MySQL prior to version 5.5.5 doesn't use InnoDB by default
+# Force InnoDB for all models
+db.Model.__table_args__ = {'mysql_engine': 'InnoDB'}
+
 # Login manager init
 login_manager = LoginManager()
 login_manager.setup_app(app)
