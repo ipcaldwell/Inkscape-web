@@ -106,7 +106,7 @@ def register():
 def validate(email, token):
     user = User.query.filter_by(email=email).first()
     if controller.validate_user(user, token):
-        flash(_(u"You have been validated, {}").user.username, 'success')
+        flash(_(u"You have been validated, {}").format(user.username), 'success')
     else:
         flash(_(u"I wasn't able to validate you"), 'error')
     return redirect(url_for('home'))
