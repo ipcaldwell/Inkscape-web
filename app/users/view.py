@@ -3,7 +3,7 @@
 from collections import OrderedDict as odict
 
 from flask import Blueprint, flash, g, Markup, redirect, render_template, request, session, url_for
-from flaskext.babel import lazy_gettext as __
+from flaskext.babel import gettext as _, lazy_gettext as __
 from flask.ext.login import login_required, login_user, logout_user
 
 from app import app, login_manager
@@ -53,11 +53,11 @@ def login():
             login_user(user)
             app.logger.info("Login successful by '{}'".format(user.username))
             #session['user_id'] = user.id
-            flash(__("Logged in as {}").format(user.username), 'success')
+            flash(_(u"Logged in as {}").format(user.username), 'success')
             #return redirect(request.referrer)
             return redirect(url_for('.profile'))
         app.logger.info("Login failed as '{}'".format(user.username))
-        flash(__("Login failed"), 'error')
+        flash(_(u"Login failed"), 'error')
     return render_template('users/login.html', form=form)
 
 @oauth_twitter.tokengetter
@@ -75,11 +75,11 @@ def oauth_authorized(response):
     next_url = request.args.get('next') or url_for('home')
     next_url = url_for('users.me')
     if response is None:
-        flash(__("Request to sign in was denied"))
+        flash(_(u"Request to sign in was denied"))
         return redirect(next_url)
     session['twitter_token'] = (response['oauth_token'], response['oauth_token_secret'])
     session['twitter_user'] = response['screen_name']
-    flash(__("You were signed in as {}").format(response['screen_name']))
+    flash(_(u"You were signed in as {}").format(response['screen_name']))
     return redirect(next_url)
 
 @module.route('/logout')
@@ -97,16 +97,16 @@ def register():
         if form.validate_on_submit():
             user = controller.register_user(form.username.data, form.email.data, form.password.data, form.accept_tos.data)
             if user is not None:
-                flash(__("Thanks for registering, {}! Check your email to complete registration.").format(user.username), 'success')
+                flash(_(u"Thanks for registering, {}! Check your email to complete registration.").format(user.username), 'success')
                 return redirect(url_for('home'))
-            flash(__("Failed to register"), 'error')
+            flash(_(u"Failed to register"), 'error')
     return render_template('users/register.html', form=form)
 
 @module.route('/validate/<email>/<token>', methods=['GET'])
 def validate(email, token):
     user = User.query.filter_by(email=email).first()
     if controller.validate_user(user, token):
-        flash(__("You have been validated, {}").user.username, 'success')
+        flash(_(u"You have been validated, {}").user.username, 'success')
     else:
-        flash(__("I wasn't able to validate you"), 'error')
+        flash(_(u"I wasn't able to validate you"), 'error')
     return redirect(url_for('home'))
