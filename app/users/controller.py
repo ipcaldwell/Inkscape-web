@@ -6,6 +6,7 @@ from os import urandom
 
 import scrypt
 from flask import Flask
+from flaskext.babel import lazy_gettext as __
 from flask.ext.mail import Message
 from flask.ext.sqlalchemy import SQLAlchemy
 
@@ -62,8 +63,8 @@ def prevalidate_user(user):
     db.session.commit()
     mail_user(
             user,
-            _("[Inkscape.org] Complete Your Registration"),
-            _("""Please complete your registration by clicking the link below.
+            __("[Inkscape.org] Complete Your Registration"),
+            __("""Please complete your registration by clicking the link below.
 
             http://inkscape.org/user/validate/{}/{}
 
