@@ -26,7 +26,7 @@ def index():
 def profile():
     return render_template('users/profile.html', user=g.user)
 
-@module.before_request
+@app.before_request
 def before_request():
     """
     Get user's profile from database before request is handled
