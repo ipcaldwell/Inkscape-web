@@ -3,7 +3,7 @@
 from sqlalchemy.sql import func
 from sqlalchemy import event
 
-from app import db
+from app import app, db
 
 class Language(db.Model):
     __tablename__ = 'languages'
@@ -23,25 +23,7 @@ class Language(db.Model):
     def __repr__(self):
         return u'<Language #{}: {} ({}; {})'.format(self.id, self.code, self.name, self.native_name)
 
-    """
-    insert into `languages` (code, name, native_name, is_major, sort) values
-    ('en','English','English', 1, 1),
-    ('de','German','Deutsch', 1, 2),
-    ('fr','French','Français', 1, 3),
-    ('it','Italian','Italiano', 1, 4),
-    ('es','Spanish','Español', 1, 5),
-    ('pt','Portuguese','Português', 1, 6),
-    ('cs','Czech','Česky', 1, 7),
-    ('ru','Russian','Русский', 1, 8),
-    ('ja','Japanese','日本語', 1, 9);
-
-    'en','English','English'
-    'de','German','Deutsch'
-    'fr','French','Français'
-    'it','Italian','Italiano'
-    'es','Spanish','Español'
-    'pt','Portuguese','Português'
-    'cs','Czech','Česky'
-    'ru','Russian','Русский'
-    'ja','Japanese','日本語'
-    """
+def after_create(target, connection, **kw):
+    for index, language in enumerate(app.config['LANGUAGES']):
+        connection.execute(target.insert(), {'code': language['code'], 'native_name': language['native_name'], 'name': language['name'], 'sort': index, 'is_major': 1})
+event.listen(Language.__table__, 'after_create', after_create)

@@ -11,15 +11,15 @@ ADMINS = frozenset(['webmaster@inkscape.org'])
 
 # Internationalization
 LANGUAGES = (
-    {u'code': u'en', u'name': u'English'},
-    {u'code': u'de', u'name': u'Deutsch'},
-    {u'code': u'fr', u'name': u'Français'},
-    {u'code': u'it', u'name': u'Italiano'},
-    {u'code': u'es', u'name': u'Español'},
-    {u'code': u'pt', u'name': u'Português'},
-    {u'code': u'cs', u'name': u'Česky'},
-    {u'code': u'ru', u'name': u'Русский'},
-    {u'code': u'ja', u'name': u'日本語'},
+    {u'code': u'en', u'name': u'English', u'native_name': u'English'},
+    {u'code': u'de', u'name': u'German', u'native_name': u'Deutsch'},
+    {u'code': u'fr', u'name': u'French', u'native_name': u'Français'},
+    {u'code': u'it', u'name': u'Italian', u'native_name': u'Italiano'},
+    {u'code': u'es', u'name': u'Spanish', u'native_name': u'Español'},
+    {u'code': u'pt', u'name': u'Portuguese', u'native_name': u'Português'},
+    {u'code': u'cs', u'name': u'Czech', u'native_name': u'Česky'},
+    {u'code': u'ru', u'name': u'Russian', u'native_name': u'Русский'},
+    {u'code': u'ja', u'name': u'Japanese', u'native_name': u'日本語'},
     )
 SUPPORTED_LOCALES = [language['code'] for language in LANGUAGES]
 
